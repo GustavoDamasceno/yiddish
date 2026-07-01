@@ -1,0 +1,12 @@
+# Pasta de imagens do Yidish Velt Brasil
+
+Coloque aqui as fotos dos poetas e demais recursos visuais.
+
+## Poetas (referenciados em script.js)
+
+- `kadia.jpg` — Kadia Molodowsky
+- `manger.jpg` — Itzik Manger
+- `sutzkever.jpg` — Avrom Sutzkever
+- `kulbak.jpg` — Moyshe Kulbak
+
+Enquanto as imagens não existirem, o site exibe placeholders elegantes com as iniciais de cada poeta.

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acervo digital de língua, literatura e cultura Yiddish — Yidish Velt Brasil">
+  <title>Yidish Velt Brasil — Acervo de cultura Yiddish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="logo-block">
+        <span class="logo-title" id="site-name"><!-- preenchido via JS --></span>
+        <span class="logo-subtitle" id="site-tagline"><!-- preenchido via JS --></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list" id="nav-list">
+          <!-- links preenchidos via JS -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-eyebrow" id="hero-eyebrow"><!-- JS --></p>
+          <h1 class="hero-title" id="hero-title"><!-- JS --></h1>
+          <p class="hero-text" id="hero-text"><!-- JS --></p>
+          <div class="hero-actions">
+            <a href="#poetas" class="btn btn-primary" id="hero-btn-primary"><!-- JS --></a>
+            <a href="#iniciantes" class="btn btn-secondary" id="hero-btn-secondary"><!-- JS --></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-ornament">
+            <div class="ornament-ring"></div>
+            <div class="ornament-track">
+              <div class="orbit-card-wrap orbit-card-wrap--1">
+                <div class="ornament-card">
+                  <span class="ornament-icon">אָ</span>
+                  <span class="ornament-label">Literatura</span>
+                </div>
+              </div>
+              <div class="orbit-card-wrap orbit-card-wrap--2">
+                <div class="ornament-card">
+                  <span class="ornament-icon">♪</span>
+                  <span class="ornament-label">Música</span>
+                </div>
+              </div>
+              <div class="orbit-card-wrap orbit-card-wrap--3">
+                <div class="ornament-card">
+                  <span class="ornament-icon">📖</span>
+                  <span class="ornament-label">Memória</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== POETAS EM DESTAQUE ========== -->
+    <section class="section section-poets" id="poetas" aria-labelledby="poets-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="poets-title"><!-- JS --></h2>
+          <p class="section-subtitle" id="poets-subtitle"><!-- JS --></p>
+        </header>
+        <div class="cards-grid cards-grid--poets" id="poets-grid">
+          <!-- cards preenchidos via JS -->
+        </div>
+        <div class="section-actions">
+          <a href="poetas.html" class="btn btn-secondary" id="poets-view-all"><!-- JS --></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== YIDDISH NO BRASIL ========== -->
+    <section class="section section-brazil" id="brasil" aria-labelledby="brazil-title">
+      <div class="container">
+        <header class="section-header section-header--left">
+          <h2 class="section-title" id="brazil-title"><!-- JS --></h2>
+          <p class="section-lead" id="brazil-lead"><!-- JS --></p>
+        </header>
+        <div class="cards-grid cards-grid--brazil" id="brazil-grid">
+          <!-- cards preenchidos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PARA INICIANTES ========== -->
+    <section class="section section-beginners" id="iniciantes" aria-labelledby="beginners-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="beginners-title"><!-- JS --></h2>
+          <p class="section-subtitle" id="beginners-subtitle"><!-- JS --></p>
+        </header>
+        <div class="learning-path" id="learning-path">
+          <!-- trilha preenchida via JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name" id="footer-name"><!-- JS --></p>
+        <p class="footer-desc" id="footer-desc"><!-- JS --></p>
+        <p class="footer-mission" id="footer-mission"><!-- JS --></p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <ul class="footer-links" id="footer-links">
+          <!-- links preenchidos via JS -->
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy" id="footer-copy"><!-- JS --></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
