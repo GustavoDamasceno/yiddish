@@ -126,16 +126,82 @@ const poets = [
     name: "Kadia Molodowsky",
     years: "1894–1975",
     image: "img/Kadia.png",
-    video: "video/Kadia.mp4",
     featured: true,
     initials: "KM",
     description: "Poetisa, educadora e uma das grandes vozes da literatura Yiddish.",
-    biography:
-      "Nascida na atual Bielorrússia, Kadia Molodowsky emigrou para os Estados Unidos em 1935. Sua poesia combina linguagem lírica e clareza moral, com atenção especial à infância, à condição feminina e ao exílio. Também foi editora e fundadora de revistas literárias em Yiddish.",
-    works: ["Froyen Lider", "Likht fun Dornboym", "Der Melekh Dovid Aleyn Iz Geblibn"],
-    themes: ["infância", "memória", "mulheres", "exílio", "identidade"],
-    context:
-      "Escreveu em meio às rupturas do século XX — guerras, deslocamentos e a reconstrução cultural ashkenazim na América. Sua voz permanece central para quem estuda poesia Yiddish escrita por mulheres.",
+    biography: `Por Gustavo Damasceno
+Introdução
+Quando comecei a estudar yiddish no curso de extensão vinculado ao IPEL (Instituto de Pesquisas e Ensino de Língua) e ao projeto "Viver com Yiddish" da PUC-RIO, um nome aparecia repetidamente durante as aulas: Kadia Molodowsky. Inicialmente, era apenas mais uma autora entre tantas da literatura yiddish. Mas, certo dia foi passado um hermabet para pesquisar sobre a kadia e ela acabou se tornando a primeira escritora cuja biografia resolvi pesquisar por conta própria e a primeira cujas obras procurei ler além do que era apresentado em sala.
+Foi justamente essa curiosidade que me levou a descobrir uma personalidade muito maior do que imaginava.
+Molodowsky não foi apenas uma das maiores poetas da literatura yiddish do século XX. Foi professora, editora, cronista, romancista, autora de literatura infantil, intelectual pública e defensora da continuidade da cultura judaica através da educação. Em uma época marcada por guerras, migrações forçadas e pelo desaparecimento de comunidades inteiras, ela enxergava no ensino da língua e da literatura uma forma de preservar a memória coletiva do povo judeu.[^1][^2]
+Ao conhecer sua trajetória, percebi que talvez seu maior legado não seja apenas aquilo que escreveu, mas aquilo que ajudou outras pessoas a continuar lendo.
+
+Uma infância entre dois mundos
+Kadia Molodowsky nasceu em 10 de maio de 1894, em um shtetl chamado Bereze (Bereza Kartuska), então pertencente ao Império Russo e atualmente localizada em Belarus.[^1]
+Sua formação reuniu influências que poderiam parecer contraditórias, mas que moldariam toda a sua obra.
+Sua avó paterna ensinou-lhe a ler em yiddish. Seu pai lhe ensinou Torá, história judaica, hebraico moderno e Guemará. Paralelamente, recebeu educação secular, prestou exames oficiais e obteve certificado de professora.[^1]
+Essa convivência entre tradição judaica e educação moderna aparece repetidamente em sua literatura.
+Ao contrário de muitos intelectuais de sua época, Molodowsky nunca pareceu enxergar esses mundos como incompatíveis. Em sua trajetória, tradição e modernidade convivem lado a lado.
+
+A professora antes da poeta
+É comum encontrar Kadia Molodowsky descrita apenas como poeta. Embora isso seja verdadeiro, a definição é incompleta.
+Durante anos ela lecionou yiddish nas escolas da TSYSHO (Central Yiddish School Organization), uma das principais redes de escolas laicas em língua yiddish da Polônia, e ensinou hebraico em cursos noturnos da comunidade judaica de Varsóvia.[^1]
+Esse talvez seja o aspecto de sua vida que mais me chamou atenção. Quando pensamos em grandes escritores, normalmente imaginamos alguém isolado, dedicado apenas à produção literária.
+Kadia fazia exatamente o oposto, passava o dia cercada por crianças: Ensinava, observava, escutava e depois escrevia. Não parece exagero dizer que sua sala de aula era também seu laboratório literário. Essa ligação entre educação e literatura explica boa parte de sua produção infantil.
+Segundo Jordan Kutzik, antes da Segunda Guerra Mundial, Molodowsky era conhecida por muitos leitores justamente por seus poemas destinados às crianças, inspirados diretamente nos alunos que ensinava diariamente.[^3]
+
+A literatura infantil como preservação cultural
+Existe um equívoco relativamente comum quando se fala da obra de Kadia, sua literatura infantil costuma ser vista como um capítulo secundário de sua produção. Na realidade, ela ocupa posição central. Molodowsky chamava muitos desses textos de "histórias em versos". São poemas repletos de humor, musicalidade, ironia e imagens do cotidiano judaico da Europa Oriental.
+Ao lê-los hoje, percebe-se que eles fazem muito mais do que entreter crianças. Eles preservam um universo inteiro: As roupas, as casas, os animais, o modo de falar, as brincadeiras, os pequenos gestos da vida cotidiana. Depois da Shoá, boa parte desse mundo desapareceu fisicamente. Os poemas permaneceram.
+A tradutora Yaira Singer observa que essas obras fazem reviver o universo do judaísmo do Leste Europeu com seu humor, sua ironia e sua profunda Yidishkayt.[^3]
+Talvez essa seja uma das maiores contribuições de Kadia: registrar um modo de viver antes que ele desaparecesse.
+
+Uma escritora impossível de rotular
+Ao estudar sua biografia, uma característica aparece repetidamente... Molodowsky recusava classificações simples.
+Era defensora da cultura yiddish e, ao mesmo tempo, sionista. Acreditava que a literatura precisava dialogar com a realidade social, mas rejeitava transformá-la em instrumento partidário.
+Escrevia intensamente sobre a experiência das mulheres judias, mas combatia a ideia de que deveria ser lida apenas como uma "poeta feminina".[^1]
+Esse posicionamento aparece também em seus ensaios publicados na revista Literarishe Bleter, nos quais criticou tanto o paternalismo dirigido às escritoras quanto a pressão para que os autores se submetessem às ideologias políticas do período.[^1]
+Essa independência intelectual talvez explique por que sua obra continua despertando interesse até hoje.
+
+Guerra, exílio e memória
+A Primeira Guerra Mundial alterou profundamente sua vida. Molodowsky trabalhou com crianças refugiadas na Ucrânia, viveu deslocamentos constantes e sobreviveu ao pogrom de Kiev.
+Em 1920 publicou seus primeiros poemas na revista Eygns.[^1] No ano seguinte estabeleceu-se em Varsóvia, onde viveu um dos períodos mais férteis de sua carreira.
+Entre 1927 e 1935 publicou quatro importantes livros de poesia e participou ativamente da vida literária yiddish da Polônia.[^1]
+Em 1935 viajou para Nova York a convite do editor Lipe Lehrer.
+A visita, inicialmente temporária, acabou transformando-se em exílio permanente diante da ascensão do nazismo e da destruição das comunidades judaicas da Europa.[^1]
+Após a Shoá, sua poesia adquiriu novos contornos. Obras como Der Melekh Dovid Aleyn Iz Geblibn ("Somente o Rei Davi Permaneceu"), publicada em 1946, figuram entre os testemunhos poéticos mais importantes escritos em yiddish sobre o Holocausto.[^2]
+
+O legado de Kadia
+Em 1971, Molodowsky recebeu o Prêmio Itzik Manger, um dos maiores reconhecimentos da literatura em língua yiddish.[^1]
+Faleceu em 1975, na Filadélfia.
+Entretanto, sua obra continua sendo publicada, traduzida e estudada em diversos países.
+Nas últimas décadas, novas traduções para o inglês, como Through an Endless Stretch of Land, organizada e traduzida por Yaira Singer, aproximaram sua poesia infantil de um público que antes praticamente não tinha acesso a essa parte de sua produção.[^3]
+Isso demonstra que seu legado continua em expansão.
+
+Considerações pessoais
+Entre todos os aspectos da trajetória de Kadia Molodowsky, aquele que mais me marcou não foi necessariamente sua poesia. Foi sua dedicação ao ensino. Talvez porque eu a tenha conhecido justamente em uma sala de aula.
+Se hoje continuo estudando yiddish, pesquisando autores e construindo um acervo sobre essa língua, parte desse caminho começou quando ouvi seu nome pela primeira vez durante o curso da PUC-RIO.
+Quanto mais leio sua obra, mais difícil fica enxergá-la apenas como poeta.
+Vejo uma educadora, uma intelectual e uma mulher que compreendeu que preservar uma língua significava preservar uma forma inteira de enxergar o mundo.
+A Shoá destruiu inúmeras comunidades judaicas. Mas, não conseguiu destruir completamente sua memória.
+Essa memória continua viva em documentos, fotografias, canções e poemas. Também continua viva em professoras como Kadia Molodowsky. Talvez seja esse seu maior legado.
+Ela não apenas escreveu em yiddish… Ela ajudou a garantir que ainda existissem pessoas capazes de lê-lo.
+
+Referências
+[^1]: HELLERSTEIN, Kathryn. Kadya Molodowsky. Jewish Women's Archive. Biografia de referência sobre a autora, abrangendo sua formação, carreira, obras e atuação intelectual.
+[^2]: HELLERSTEIN, Kathryn (org. e trad.). Paper Bridges: Selected Poems of Kadya Molodowsky. Detroit: Wayne State University Press, 1999.
+[^3]: KUTZIK, Jordan. A new bilingual edition of Kadya Molodowsky's enchanting Yiddish children's poetry. The Forward, 2 dez. 2020. Artigo sobre a poesia infantil de Molodowsky e a tradução de Yaira Singer.
+Bibliografia complementar
+GONSHOR, Anna Fishman. Kadye Molodowsky in Literarishe Bleter, 1925–1935: Annotated Bibliography. McGill University, 1997.
+KLEPFISZ, Irena. The Mothers, the Language: Feminism, Yidishkayt, and the Politics of Memory. Bridges, v. 4, n. 1, 1994.
+Obras de Kadia Molodowsky:
+Kheshvndike Nekht (1927)
+Geyen Shikhlekh Avek (1930)
+Dzhike Gas (1933)
+Freydke (1935)
+In Land Fun Mayn Gebeyn (1937)
+Der Melekh Dovid Aleyn Iz Geblibn (1946)
+Likht Fun Dornboym (1965)`,
   },
   {
     id: "itzik-manger",

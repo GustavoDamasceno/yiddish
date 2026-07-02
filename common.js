@@ -95,6 +95,145 @@ function initMobileNav() {
   });
 }
 
+function escapeHTML(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatInlineFootnotes(text) {
+  const escaped = escapeHTML(text);
+
+  return escaped.replace(/(\[\^\d+\])+/g, (match) => {
+    const numbers = [...match.matchAll(/\[\^(\d+)\]/g)].map((m) => m[1]);
+    const inner = numbers
+      .map((num, index) => {
+        const link = `<a href="#ref-${num}">${num}</a>`;
+        return index > 0 ? `,${link}` : link;
+      })
+      .join("");
+
+    return `<sup class="article-footnote">${inner}</sup>`;
+  });
+}
+
+function formatFootnoteReference(line) {
+  const match = line.match(/^\[\^(\d+)\]:\s*(.+)$/);
+  if (!match) return escapeHTML(line);
+
+  return `<sup class="article-footnote" id="ref-${match[1]}">${match[1]}</sup> ${escapeHTML(match[2])}`;
+}
+
+function isWorkListItem(line) {
+  return /^.+ \(\d{4}\)$/.test(line);
+}
+
+function isFootnoteRef(line) {
+  return /^\[\^\d+\]:/.test(line);
+}
+
+function isBibliographyLine(line) {
+  return /^[A-Z]{2,}/.test(line) && line.includes(",");
+}
+
+function hasInlineFootnote(line) {
+  return /\[\^\d+\]/.test(line);
+}
+
+function endsLikeParagraph(line) {
+  return /[.!?…](\[\^\d+\])+$/.test(line) || /[.!?…]$/.test(line);
+}
+
+function isSectionHeading(line) {
+  if (!line) return false;
+  if (line.startsWith("Por ")) return false;
+  if (isFootnoteRef(line)) return false;
+  if (isWorkListItem(line)) return false;
+  if (isBibliographyLine(line)) return false;
+  if (hasInlineFootnote(line)) return false;
+  if (endsLikeParagraph(line)) return false;
+  if (line.endsWith(":") && !line.startsWith("Obras de")) return false;
+  if (line.length > 75) return false;
+  return true;
+}
+
+function formatBiographyAsArticle(text) {
+  const lines = text.split("\n");
+  let html = "";
+  let worksListOpen = false;
+
+  function closeWorksList() {
+    if (worksListOpen) {
+      html += "</ul>";
+      worksListOpen = false;
+    }
+  }
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      closeWorksList();
+      return;
+    }
+
+    if (index === 0 && trimmed.startsWith("Por ")) {
+      closeWorksList();
+      html += `<p class="article-byline">${escapeHTML(trimmed)}</p>`;
+      return;
+    }
+
+    if (trimmed.startsWith("Obras de")) {
+      closeWorksList();
+      html += `<h3 class="article-subheading">${escapeHTML(trimmed)}</h3>`;
+      return;
+    }
+
+    if (isWorkListItem(trimmed)) {
+      if (!worksListOpen) {
+        html += '<ul class="article-list">';
+        worksListOpen = true;
+      }
+      html += `<li>${escapeHTML(trimmed)}</li>`;
+      return;
+    }
+
+    closeWorksList();
+
+    if (isSectionHeading(trimmed)) {
+      html += `<h2 class="article-heading">${escapeHTML(trimmed)}</h2>`;
+      return;
+    }
+
+    if (isFootnoteRef(trimmed)) {
+      html += `<p class="article-ref">${formatFootnoteReference(trimmed)}</p>`;
+      return;
+    }
+
+    if (isBibliographyLine(trimmed)) {
+      html += `<p class="article-bib">${escapeHTML(trimmed)}</p>`;
+      return;
+    }
+
+    html += `<p class="article-paragraph">${formatInlineFootnotes(trimmed)}</p>`;
+  });
+
+  closeWorksList();
+  return `<div class="article-content">${html}</div>`;
+}
+
+function buildBiographyHTML(poet) {
+  if (!poet.biography) return "";
+
+  if (poet.biography.includes("\n")) {
+    return formatBiographyAsArticle(poet.biography);
+  }
+
+  return `<div class="article-content"><p class="article-paragraph">${escapeHTML(poet.biography)}</p></div>`;
+}
+
 function buildPoetVideoHTML(poet) {
   if (!poet.video) return "";
 
@@ -113,6 +252,43 @@ function buildPoetVideoHTML(poet) {
             Seu navegador não suporta a reprodução de vídeo.
           </video>
         </div>
+      </section>
+  `;
+}
+
+function buildPoetWorksHTML(poet) {
+  if (!poet.works || poet.works.length === 0) return "";
+
+  return `
+      <section class="profile-section">
+        <h2 class="profile-section__title">Obras principais</h2>
+        <ul class="profile-works">
+          ${poet.works.map((work) => `<li>${work}</li>`).join("")}
+        </ul>
+      </section>
+  `;
+}
+
+function buildPoetThemesHTML(poet) {
+  if (!poet.themes || poet.themes.length === 0) return "";
+
+  return `
+      <section class="profile-section">
+        <h2 class="profile-section__title">Temas recorrentes</h2>
+        <div class="profile-tags">
+          ${poet.themes.map((theme) => `<span class="profile-tag">${theme}</span>`).join("")}
+        </div>
+      </section>
+  `;
+}
+
+function buildPoetContextHTML(poet) {
+  if (!poet.context) return "";
+
+  return `
+      <section class="profile-section">
+        <h2 class="profile-section__title">Contexto histórico</h2>
+        <p class="profile-section__text">${poet.context}</p>
       </section>
   `;
 }
@@ -136,29 +312,14 @@ function buildPoetProfileHTML(poet) {
 
     <div class="profile-body">
       ${buildPoetVideoHTML(poet)}
-      <section class="profile-section">
+      <section class="profile-section profile-section--article">
         <h2 class="profile-section__title">Biografia</h2>
-        <p class="profile-section__text">${poet.biography}</p>
+        ${buildBiographyHTML(poet)}
       </section>
 
-      <section class="profile-section">
-        <h2 class="profile-section__title">Obras principais</h2>
-        <ul class="profile-works">
-          ${poet.works.map((work) => `<li>${work}</li>`).join("")}
-        </ul>
-      </section>
-
-      <section class="profile-section">
-        <h2 class="profile-section__title">Temas recorrentes</h2>
-        <div class="profile-tags">
-          ${poet.themes.map((theme) => `<span class="profile-tag">${theme}</span>`).join("")}
-        </div>
-      </section>
-
-      <section class="profile-section">
-        <h2 class="profile-section__title">Contexto histórico</h2>
-        <p class="profile-section__text">${poet.context}</p>
-      </section>
+      ${buildPoetWorksHTML(poet)}
+      ${buildPoetThemesHTML(poet)}
+      ${buildPoetContextHTML(poet)}
     </div>
   `;
 }
