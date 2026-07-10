@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teclado fonético de Yiddish — digite em YIVO e veja o texto em hebraico">
+  <title>Teclado Fonético de Yiddish — Yiddish Velt Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="transliteration">
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-block">
+        <span class="logo-title" id="site-name"></span>
+        <span class="logo-subtitle" id="site-tagline"></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list" id="nav-list"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-main">
+    <div class="container tool-container">
+      <a href="index.html#iniciantes" class="tool-back" id="translit-back"></a>
+
+      <header class="tool-header">
+        <h1 class="tool-title" id="translit-title"></h1>
+        <p class="tool-subtitle">
+          <span id="translit-subtitle"></span>
+          <button type="button" class="tool-help-link" id="translit-help-btn"></button>
+        </p>
+      </header>
+
+      <div class="keyboard-tool">
+        <label class="visually-hidden" for="yivo-input">Entrada em transliteração YIVO</label>
+        <textarea
+          id="yivo-input"
+          class="keyboard-input"
+          rows="5"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off"
+        ></textarea>
+
+        <div class="keyboard-controls" role="group" aria-label="Opções do teclado">
+          <div class="keyboard-toggle" role="group" aria-label="Estilo da letra">
+            <button type="button" class="keyboard-btn is-active" id="btn-printed" aria-pressed="true"></button>
+            <button type="button" class="keyboard-btn" id="btn-cursive" aria-pressed="false"></button>
+          </div>
+          <button type="button" class="keyboard-btn keyboard-btn--copy" id="btn-copy"></button>
+        </div>
+
+        <label class="visually-hidden" for="yiddish-output">Resultado em Yiddish</label>
+        <textarea
+          id="yiddish-output"
+          class="keyboard-output font-printed"
+          rows="5"
+          readonly
+          dir="rtl"
+          lang="yi"
+          spellcheck="false"
+        ></textarea>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tutorial do teclado -->
+  <div class="modal-overlay" id="tutorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tutorial-title">
+    <div class="modal tutorial-modal" role="document">
+      <button class="modal-close" id="tutorial-close" aria-label="Fechar tutorial">&times;</button>
+      <div class="modal-inner" id="tutorial-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name" id="footer-name"></p>
+        <p class="footer-desc" id="footer-desc"></p>
+        <p class="footer-mission" id="footer-mission"></p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <ul class="footer-links" id="footer-links"></ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy" id="footer-copy"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script src="transliteracao.js"></script>
+</body>
+</html>

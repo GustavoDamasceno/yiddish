@@ -50,6 +50,64 @@ const siteContent = {
     subtitle: "Uma trilha gentil para quem quer dar os primeiros passos no idioma e na cultura Yiddish.",
   },
 
+  transliteration: {
+    title: "Teclado Fonético de Yiddish",
+    subtitle: "Digite usando a transliteração YIVO.",
+    helpLink: "Veja como funciona",
+    inputPlaceholder: "Digite aqui em transliteração YIVO…",
+    printedLabel: "Letra impressa",
+    cursiveLabel: "Letra cursiva",
+    copyLabel: "Copiar resultado",
+    copiedLabel: "Copiado!",
+    backLabel: "← Voltar aos iniciantes",
+    tutorial: {
+      title: "Como usar o teclado fonético",
+      closeLabel: "Fechar",
+      sections: [
+        {
+          heading: "O que é este teclado?",
+          paragraphs: [
+            "Este teclado permite digitar em Yiddish sem instalar nenhum software ou layout adicional no computador.",
+            "Basta escrever a transliteração YIVO com o teclado latino — e as letras corretas em Yiddish aparecem automaticamente.",
+          ],
+        },
+        {
+          heading: "Como digitar",
+          paragraphs: [
+            "Digite no campo de cima usando a transliteração YIVO. O resultado em Yiddish aparece no campo de baixo, da direita para a esquerda.",
+          ],
+          examples: [
+            { input: "sh", output: "ש" },
+            { input: "ay", output: "ײַ" },
+            { input: "kh", output: "כ / ך" },
+            { input: "sholem-aleykhem", output: "שאָלעם־אַלײכעם" },
+          ],
+        },
+        {
+          heading: "O que o teclado faz sozinho",
+          paragraphs: [
+            "O shtumer-alef e as formas finais de khof, mem, nun, fey e tsadek são produzidos automaticamente e corretamente.",
+            "Você também pode alternar entre letra impressa e letra cursiva (Nachlaot), e copiar o resultado com um clique.",
+          ],
+        },
+        {
+          heading: "Importante: é Yiddish, não hebraico",
+          paragraphs: [
+            "A saída segue a ortografia YIVO do Yiddish. Mesmo palavras de origem hebraica (lashon kodesh) aparecem escritas segundo a tradição Yiddish — e não na grafia do hebraico moderno.",
+            "Por exemplo: digite shabbes e você verá שאַבעס, e não שבת, como no hebraico.",
+            "Por isso, o resultado pode diferir do que você veria em um teclado hebraico comum. Isso é esperado: o objetivo aqui é escrever em Yiddish.",
+          ],
+        },
+        {
+          heading: "Dica rápida",
+          paragraphs: [
+            "Experimente digitar sholem-aleykhem no campo de entrada e observe o resultado. Depois, teste palavras do seu interesse e alterne entre letra impressa e cursiva.",
+          ],
+        },
+      ],
+    },
+  },
+
   footer: {
     desc: "Um projeto em construção dedicado à preservação, estudo e difusão da língua e cultura Yiddish em português.",
     mission: "Feito para preservar, estudar e compartilhar a cultura Yiddish.",
@@ -285,14 +343,15 @@ const brazilCards = [
 
 const learningPath = [
   {
-    icon: "א",
+    icon: "אָ",
     title: "Alef-beys",
     description: "Conheça o alfabeto yiddish e os sons básicos da língua escrita.",
   },
   {
-    icon: "💬",
-    title: "Primeiras palavras",
-    description: "Saudações, números e vocabulário essencial para começar a ler e ouvir.",
+    icon: "⌨",
+    title: "Transliterações",
+    description: "Digite em YIVO e veja o Yiddish correto aparecer, sem instalar teclado.",
+    href: "transliteracao.html",
   },
   {
     icon: "☀",

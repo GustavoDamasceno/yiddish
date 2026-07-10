@@ -76,11 +76,30 @@ function renderLearningPath() {
   learningPath.forEach((step, index) => {
     const article = document.createElement("article");
     article.className = "learning-step";
+
+    if (step.href) {
+      article.classList.add("learning-step--link");
+      article.setAttribute("role", "link");
+      article.tabIndex = 0;
+      article.addEventListener("click", () => {
+        window.location.href = step.href;
+      });
+      article.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          window.location.href = step.href;
+        }
+      });
+    }
+
     article.innerHTML = `
-      <span class="learning-step__number" aria-hidden="true">${index + 1}</span>
-      <span class="learning-step__icon" aria-hidden="true">${step.icon}</span>
+      <div class="learning-step__top">
+        <span class="learning-step__number" aria-hidden="true">${index + 1}</span>
+        <span class="learning-step__icon" aria-hidden="true">${step.icon}</span>
+      </div>
       <h3 class="learning-step__title">${step.title}</h3>
       <p class="learning-step__desc">${step.description}</p>
+      ${step.href ? '<span class="learning-step__cta">Abrir →</span>' : ""}
     `;
     container.appendChild(article);
   });
