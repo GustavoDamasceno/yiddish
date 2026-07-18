@@ -50,6 +50,14 @@ const siteContent = {
     subtitle: "Uma trilha gentil para quem quer dar os primeiros passos no idioma e na cultura Yiddish.",
   },
 
+  alefbeys: {
+    title: "Alef-beys",
+    subtitle: "O alfabeto Yiddish organizado por grupos, com letra e nome na tradição YIVO.",
+    backLabel: "← Voltar aos iniciantes",
+    printedLabel: "Letra impressa",
+    cursiveLabel: "Letra cursiva",
+  },
+
   transliteration: {
     title: "Teclado Fonético de Yiddish",
     subtitle: "Digite usando a transliteração YIVO.",
@@ -346,6 +354,7 @@ const learningPath = [
     icon: "אָ",
     title: "Alef-beys",
     description: "Conheça o alfabeto yiddish e os sons básicos da língua escrita.",
+    href: "alef-beys.html",
   },
   {
     icon: "⌨",
@@ -372,5 +381,93 @@ const learningPath = [
     icon: "🌍",
     title: "Cultura e contexto",
     description: "História, tradições e referências que ajudam a compreender o idioma.",
+  },
+];
+
+// ---- Alef-beys (alfabeto Yiddish por grupos) ----
+// Edite títulos e itens aqui. Cada item: { letter, name }
+const alefBeysSections = [
+  {
+    id: "consonants",
+    title: "Consoantes Yiddish",
+    items: [
+      { letter: "ב", name: "beys" },
+      { letter: "ג", name: "gimel" },
+      { letter: "ד", name: "daled" },
+      { letter: "ה", name: "hey" },
+      { letter: "װ", name: "tsvey vovn" },
+      { letter: "ז", name: "zayin" },
+      { letter: "ט", name: "tes" },
+      { letter: "י", name: "yud" },
+      { letter: "כ", name: "khof" },
+      { letter: "ל", name: "lamed" },
+      { letter: "מ", name: "mem" },
+      { letter: "נ", name: "nun" },
+      { letter: "ס", name: "samekh" },
+      { letter: "פּ", name: "pey" },
+      { letter: "פֿ", name: "fey" },
+      { letter: "צ", name: "tsadek" },
+      { letter: "ק", name: "kuf" },
+      { letter: "ר", name: "reysh" },
+      { letter: "ש", name: "shin" },
+    ],
+  },
+  {
+    id: "vowels",
+    title: "Vogais Yiddish",
+    items: [
+      { letter: "אַ", name: "pasekh alef" },
+      { letter: "אָ", name: "komets alef" },
+      { letter: "ײ", name: "tsvey yudn" },
+      { letter: "ײַ", name: "pasekh tsvey yudn" },
+      { letter: "ו", name: "vov" },
+      { letter: "י", name: "yud" },
+      { letter: "ױ", name: "vov yud" },
+      { letter: "ע", name: "ayin" },
+    ],
+  },
+  {
+    id: "courtesy",
+    title: "Vogais de cortesia",
+    note: "Usadas para dar mais clareza à leitura.",
+    items: [
+      { letter: "וּ", name: "melupm vov" },
+      { letter: "יִ", name: "khirek yud" },
+      { letter: "א", name: "shtumer alef" },
+    ],
+  },
+  {
+    id: "finals",
+    title: "Formas finais das consoantes",
+    note: "Usadas no fim das palavras.",
+    items: [
+      { letter: "ך", name: "langer khof" },
+      { letter: "ן", name: "langer nun" },
+      { letter: "ף", name: "langer fey" },
+      { letter: "ץ", name: "langer tsadek" },
+      { letter: "ם", name: "shlos mem" },
+    ],
+  },
+  {
+    id: "clusters",
+    title: "Grupos consonantais",
+    items: [
+      { letter: "זש", name: "zayin shin" },
+      { letter: "דזש", name: "daled zayin shin" },
+      { letter: "טש", name: "tes shin" },
+    ],
+  },
+  {
+    id: "obsolete",
+    title: "Letras obsoletas",
+    note: "Usadas principalmente em palavras de origem hebraica (lashon kodesh).",
+    items: [
+      { letter: "בֿ", name: "veys" },
+      { letter: "ח", name: "khes" },
+      { letter: "כּ", name: "kaf" },
+      { letter: "שׂ", name: "sin" },
+      { letter: "תּ", name: "tof" },
+      { letter: "ת", name: "sof" },
+    ],
   },
 ];
