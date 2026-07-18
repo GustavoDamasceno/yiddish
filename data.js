@@ -122,6 +122,11 @@ const siteContent = {
     copy: "© 2025 Yidish Velt Brasil. Conteúdos em revisão.",
   },
 
+  theme: {
+    toDark: "Ativar modo escuro",
+    toLight: "Ativar modo claro",
+  },
+
   profile: {
     notFoundTitle: "Poeta não encontrado",
     notFoundText: "O perfil que você procura não existe ou foi removido.",

@@ -400,9 +400,74 @@ function renderPoetCards(grid, poetsList) {
   });
 }
 
+function initThemeToggle() {
+  const THEME_KEY = "yiddishvelt-theme";
+  const headerInner = document.querySelector(".header-inner");
+  const navToggle = document.getElementById("nav-toggle");
+  if (!headerInner) return;
+
+  const labels = (siteContent.theme) || {
+    toDark: "Ativar modo escuro",
+    toLight: "Ativar modo claro",
+  };
+
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+
+    const button = document.getElementById("theme-toggle");
+    if (!button) return;
+    button.setAttribute("aria-label", theme === "dark" ? labels.toLight : labels.toDark);
+    button.setAttribute("title", theme === "dark" ? labels.toLight : labels.toDark);
+  }
+
+  let button = document.getElementById("theme-toggle");
+  if (!button) {
+    button = document.createElement("button");
+    button.type = "button";
+    button.id = "theme-toggle";
+    button.className = "theme-toggle";
+    button.innerHTML = `
+      <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"></path>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+      </svg>
+    `;
+  }
+
+  // Ordem: logo → menu → tema → hambúrguer
+  const mainNav = document.getElementById("main-nav");
+  if (mainNav && mainNav.parentNode === headerInner) {
+    mainNav.insertAdjacentElement("afterend", button);
+  } else {
+    headerInner.appendChild(button);
+  }
+
+  if (navToggle && navToggle.parentNode === headerInner) {
+    headerInner.appendChild(navToggle);
+  }
+
+  applyTheme(getPreferredTheme());
+
+  button.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
 function initSharedLayout() {
   renderSiteHeader();
   renderNav();
   renderFooter();
   initMobileNav();
+  initThemeToggle();
 }
