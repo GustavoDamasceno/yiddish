@@ -4,6 +4,7 @@
 
    Imagens: pasta img/  (ex.: img/Kadia.png)
    Vídeos:  pasta video/ (ex.: video/Kadia.mp4) — campo "video" em cada poeta
+   Músicas: array songs em data.js — página musica.html?id=...
    Destaque na home: campo "featured: true" em cada poeta
    ============================================================ */
 
@@ -38,6 +39,34 @@ const siteContent = {
     searchPlaceholder: "Buscar por nome…",
     noResults: "Nenhum poeta encontrado com esse nome.",
     backLabel: "← Voltar ao início",
+  },
+
+  songsPage: {
+    title: "Músicas",
+    subtitle: "Canções em Yiddish para ouvir, ler e aprender — com letra, tradução e vocabulário.",
+    searchPlaceholder: "Buscar por nome…",
+    noResults: "Nenhuma música encontrada com esse nome.",
+    backLabel: "← Voltar ao início",
+    btnLabel: "Ouvir e ler",
+  },
+
+  songPage: {
+    backLabel: "← Voltar às músicas",
+    videoTitle: "Ouça a música",
+    translitTitle: "Transliteração (YIVO)",
+    yiddishTitle: "Letra em Yiddish",
+    portugueseTitle: "Em português",
+    vocabTitle: "Palavras aprendidas",
+    printedLabel: "Letra impressa",
+    cursiveLabel: "Letra cursiva",
+    vocabHeaders: {
+      yiddish: "Yiddish",
+      translit: "Transliteração",
+      meaning: "Significado",
+    },
+    notFoundTitle: "Música não encontrada",
+    notFoundText: "A música que você procura não existe ou foi removida.",
+    notFoundBtn: "Ver todas as músicas",
   },
 
   brazil: {
@@ -138,7 +167,7 @@ const siteContent = {
 const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Poetas", href: "poetas.html" },
-  { label: "Músicas", href: "#inicio" },
+  { label: "Músicas", href: "musicas.html" },
   { label: "Livros", href: "#inicio" },
   { label: "Yiddish no Brasil", href: "#brasil" },
   { label: "Sobre", href: "#topo" },
@@ -161,9 +190,7 @@ const categories = [
   },
   {
     icon: "♪",
-    title: "Músicas",
-    description: "Canções tradicionais, klezmer e gravações que atravessam gerações.",
-    href: "#categorias",
+    href: "musicas.html",
   },
   {
     icon: "📖",
@@ -374,8 +401,9 @@ const learningPath = [
   },
   {
     icon: "🎵",
-    title: "Músicas infantis",
+    title: "Músicas",
     description: "Canções simples para fixar ritmo, pronúncia e vocabulário.",
+    href: "musicas.html",
   },
   {
     icon: "📄",
@@ -473,6 +501,114 @@ const alefBeysSections = [
       { letter: "שׂ", name: "sin" },
       { letter: "תּ", name: "tof" },
       { letter: "ת", name: "sof" },
+    ],
+  },
+];
+
+// ---- Músicas ----
+// Adicione novas músicas neste array. Página: musica.html?id=seu-id
+const songs = [
+  {
+    id: "yome-yome",
+    title: "Yome Yome",
+    subtitle: "Canção tradicional infantil",
+    description: "Uma menina diz à mãe o que deseja — até revelar o que realmente quer.",
+    youtubeId: "InrSN76Yxog",
+    image: "",
+    featured: true,
+    transliteration: `— Yome, Yome, shpil mir a lidele,
+Vos dos meydele vil;
+— Dos meydele vil a hitele hobn,
+Muz men geyn dem putserke zogn!
+
+— Neyn, mameshi, neyn!
+Du kenst mikh nisht farshteyn,
+Du veyst nisht, vos ikh meyn!
+
+Yome, Yome, shpil mir a lidele,
+Vos dos meydele vil;
+Dos meydele vil a por shikhelekh hobn,
+Muz men geyn dem shuster zogn!
+
+— Neyn, mameshi, neyn!
+Du kenst mikh nisht farshteyn,
+Du veyst nisht, vos ikh meyn!
+
+— Yome, Yome, shpil mir a lidele,
+Vos dos meydele vil;
+— Dos meydele vil a khosndl hobn,
+Muz men geyn dem shadkhn zogn!
+
+— Yo, mameshi, yo!
+Du veyst shoyn vos ikh meyn,
+Du kenst mikh shoyn farshteyn!`,
+    yiddish: `— יאָמע, יאָמע, שפּיל מיר אַ לידעלע,
+װאָס דאָס מײדעלע װיל;
+— דאָס מײדעלע װיל אַ היטעלע האָבן,
+מוז מען גײן דעם פּוצערקע זאָגן!
+
+— נײן, מאַמעשי, נײן!
+דו קענסט מיך נישט פֿאַרשטײן,
+דו װײסט נישט, װאָס איך מײן!
+
+יאָמע, יאָמע, שפּיל מיר אַ לידעלע,
+װאָס דאָס מײדעלע װיל;
+דאָס מײדעלע װיל אַ פּאָר שיכעלעך האָבן,
+מוז מען גײן דעם שוסטער זאָגן!
+
+— נײן, מאַמעשי, נײן!
+דו קענסט מיך נישט פֿאַרשטײן,
+דו װײסט נישט, װאָס איך מײן!
+
+— יאָמע, יאָמע, שפּיל מיר אַ לידעלע,
+װאָס דאָס מײדעלע װיל;
+— דאָס מײדעלע װיל אַ כאָסנדל האָבן,
+מוז מען גײן דעם שאַדכן זאָגן!
+
+— יאָ, מאַמעשי, יאָ!
+דו װײסט שוין װאָס איך מײן,
+דו קענסט מיך שוין פֿאַרשטײן!`,
+    portuguese: `— Yome, Yome, toca para mim uma cançãozinha
+sobre o que a menininha quer;
+— A menininha quer ter um chapeuzinho,
+é preciso ir dizer ao chapeleiro!
+
+— Não, mãezinha, não!
+Você não consegue me entender,
+você não sabe o que eu quero dizer!
+
+Yome, Yome, toca para mim uma cançãozinha
+sobre o que a menininha quer;
+A menininha quer ter um par de sapatinhos,
+é preciso ir dizer ao sapateiro!
+
+— Não, mãezinha, não!
+Você não consegue me entender,
+você não sabe o que eu quero dizer!
+
+— Yome, Yome, toca para mim uma cançãozinha
+sobre o que a menininha quer;
+— A menininha quer ter um noivinho,
+é preciso ir dizer ao casamenteiro!
+
+— Sim, mãezinha, sim!
+Agora você já sabe o que eu quero dizer,
+agora você já consegue me entender!`,
+    vocabulary: [
+      { yiddish: "לידעלע", translit: "lidele", meaning: "cançãozinha" },
+      { yiddish: "מײדעלע", translit: "meydele", meaning: "menininha" },
+      { yiddish: "װיל", translit: "vil", meaning: "quer" },
+      { yiddish: "היטעלע", translit: "hitele", meaning: "chapeuzinho" },
+      { yiddish: "שיכעלעך", translit: "shikhelekh", meaning: "sapatinhos" },
+      { yiddish: "כאָסנדל", translit: "khosndl", meaning: "noivinho" },
+      { yiddish: "מאַמעשי", translit: "mameshi", meaning: "mãezinha" },
+      { yiddish: "נײן", translit: "neyn", meaning: "não" },
+      { yiddish: "יאָ", translit: "yo", meaning: "sim" },
+      { yiddish: "פֿאַרשטײן", translit: "farshteyn", meaning: "entender" },
+      { yiddish: "מײן", translit: "meyn", meaning: "querer dizer / significar" },
+      { yiddish: "שפּיל", translit: "shpil", meaning: "toca / toque" },
+      { yiddish: "שוסטער", translit: "shuster", meaning: "sapateiro" },
+      { yiddish: "שאַדכן", translit: "shadkhn", meaning: "casamenteiro" },
     ],
   },
 ];

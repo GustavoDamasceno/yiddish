@@ -552,6 +552,10 @@ html[data-theme="dark"] {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.cards-grid--songs {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .cards-grid--brazil {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -1549,6 +1553,323 @@ html[data-theme="dark"] {
   margin-bottom: 1.5rem;
 }
 
+/* ---- Cards de músicas ---- */
+
+.song-card {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px var(--color-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px var(--color-shadow-hover);
+}
+
+.song-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-bg-soft);
+}
+
+.song-card__media--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-bg-soft), var(--color-gradient-soft));
+}
+
+.song-card__note {
+  font-size: 3rem;
+  color: var(--color-accent);
+  opacity: 0.75;
+}
+
+.song-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.song-card:hover .song-card__image {
+  transform: scale(1.04);
+}
+
+.song-card__body {
+  padding: 1.35rem 1.25rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-card__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: 0.4rem;
+}
+
+.song-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.song-card__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 1.1rem;
+}
+
+.song-card__btn {
+  align-self: flex-start;
+}
+
+/* ---- Página da música ---- */
+
+.song-main {
+  padding: 2rem 0 4.5rem;
+}
+
+.song-page {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 40px var(--color-shadow);
+  overflow: hidden;
+  padding: 2.25rem 2.25rem 2.5rem;
+}
+
+.song-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.song-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: 0.5rem;
+}
+
+.song-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  line-height: 1.15;
+}
+
+.song-summary {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+.song-section {
+  margin-bottom: 2.25rem;
+}
+
+.song-section:last-child {
+  margin-bottom: 0;
+}
+
+.song-section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.song-section__head .song-section__title {
+  margin-bottom: 0;
+}
+
+.song-section__title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.85rem;
+}
+
+.song-section__title--inline {
+  margin-bottom: 0;
+}
+
+.song-font-controls {
+  margin-bottom: 0;
+}
+
+.song-lyrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.song-lyrics-col__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.song-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0d1117;
+  box-shadow: 0 8px 28px var(--color-shadow);
+}
+
+.song-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.song-video--blocked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  aspect-ratio: 16 / 9;
+  text-align: center;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+}
+
+.song-video__message,
+.song-video__hint {
+  max-width: 34rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.song-video__hint code,
+.song-video__message code {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-card);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.song-lyrics {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-text-muted);
+  white-space: pre-wrap;
+  padding: 1.25rem 1.35rem;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.song-lyrics--yiddish {
+  font-size: 1.35rem;
+  line-height: 2;
+  color: var(--color-text);
+  text-align: right;
+}
+
+.song-lyrics--yiddish.font-printed {
+  font-family: "David Libre", "Times New Roman", "Noto Sans Hebrew", "Arial Hebrew", serif;
+}
+
+.song-lyrics--yiddish.font-cursive {
+  font-family: "Nachlaot", "David Libre", "Noto Sans Hebrew", serif;
+  font-size: 1.55rem;
+}
+
+.song-lyrics--translit {
+  font-family: var(--font-sans);
+}
+
+.song-lyrics--portuguese {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+}
+
+.vocab-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.vocab-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+
+.vocab-table th,
+.vocab-table td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vocab-table th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-bg-soft);
+}
+
+.vocab-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.vocab-table tbody tr:hover td {
+  background: rgba(232, 237, 244, 0.35);
+}
+
+[data-theme="dark"] .vocab-table tbody tr:hover td {
+  background: rgba(28, 35, 48, 0.65);
+}
+
+.vocab-yiddish {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  font-family: "David Libre", "Times New Roman", "Noto Sans Hebrew", serif;
+}
+
 /* ---- Lista de poetas ---- */
 
 .poets-list-main {
@@ -1709,7 +2030,8 @@ html[data-theme="dark"] {
 
 @media (max-width: 1024px) {
   .cards-grid--poets,
-  .cards-grid--poets-all {
+  .cards-grid--poets-all,
+  .cards-grid--songs {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1807,6 +2129,7 @@ html[data-theme="dark"] {
   .cards-grid--categories,
   .cards-grid--poets,
   .cards-grid--poets-all,
+  .cards-grid--songs,
   .cards-grid--brazil,
   .learning-path {
     grid-template-columns: 1fr;
@@ -1815,6 +2138,19 @@ html[data-theme="dark"] {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+  }
+
+  .song-page {
+    padding: 1.5rem 1.15rem 1.75rem;
+  }
+
+  .song-section__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .song-lyrics-grid {
+    grid-template-columns: 1fr;
   }
 
   .profile-header {

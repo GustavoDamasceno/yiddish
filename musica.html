@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Música em Yiddish — Yiddish Velt Brasil">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Música — Yiddish Velt Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('yiddishvelt-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="song">
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-block">
+        <span class="logo-title" id="site-name"></span>
+        <span class="logo-subtitle" id="site-tagline"></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list" id="nav-list"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="song-main">
+    <div class="container">
+      <a href="musicas.html" class="tool-back" id="song-back"></a>
+      <article class="song-page" id="song-content">
+        <!-- preenchido via JS -->
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name" id="footer-name"></p>
+        <p class="footer-desc" id="footer-desc"></p>
+        <p class="footer-mission" id="footer-mission"></p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <ul class="footer-links" id="footer-links"></ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy" id="footer-copy"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="common.js"></script>
+  <script src="musica.js"></script>
+</body>
+</html>
