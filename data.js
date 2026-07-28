@@ -514,7 +514,7 @@ const songs = [
     subtitle: "Canção tradicional infantil",
     description: "Uma menina diz à mãe o que deseja — até revelar o que realmente quer.",
     youtubeId: "InrSN76Yxog",
-    image: "",
+    image: "img/yume.png",
     featured: true,
     transliteration: `— Yome, Yome, shpil mir a lidele,
 Vos dos meydele vil;
@@ -609,6 +609,158 @@ agora você já consegue me entender!`,
       { yiddish: "שפּיל", translit: "shpil", meaning: "toca / toque" },
       { yiddish: "שוסטער", translit: "shuster", meaning: "sapateiro" },
       { yiddish: "שאַדכן", translit: "shadkhn", meaning: "casamenteiro" },
+    ],
+  },
+  {
+    id: "zol-shoyn-kumen-di-geule",
+    title: "Zol Shoyn Kumen di Geule",
+    subtitle: "Canção tradicional",
+    description: "Um pedido de redenção e esperança: que a geule venha logo, e que Moshiekh não demore.",
+    youtubeId: "qy3lztcX8Es",
+    image: "img/zolshoyn.png",
+    featured: true,
+    transliteration: `Ongezolyet oyfn hartsn,
+makht men a lekhayim,
+Oyb der umes lozt nit ruen,
+zingen mir a lid.
+Iz nito keyn bisl bronfn,
+lomir trinken mayim.
+Mayim-khayim iz dokh khayim,
+vos darf nokh der yid?
+
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Moshiekh kumt shoyn bald!
+
+S'iz a dor fun kule-khayev,
+zayt nit keyn naronim,
+Un fun zindikn
+Moshiekh gikher kumen vet!
+Akh, du tatele in himl,
+s'betn bney rakhmonim;
+Ze, Moshiekh zol nit kumen
+a bisele tsu shpet.
+
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Moshiekh kumt shoyn bald!
+
+S'tantsn beymer in di velder,
+shtern oyfn himl.
+Reb Yisroel, der mekhutn,
+dreyt zikh in der mit.
+S'vet zikh oyfvekn Moshiekh
+fun zayn tifn driml,
+Ven er vet derhern
+undzer tfiledike lid.
+
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Zol shoyn kumen di geule,
+Moshiekh kumt shoyn bald!`,
+    yiddish: `אָנגעזאָליעט אויפֿן האַרצן,
+מאַכט מען אַ לחיים,
+אויב דער אומעט לאָזט ניט רוען,
+זינגען מיר אַ ליד.
+איז ניטאָ קײן ביסל בראָנפֿן,
+לאָמיר טרינקען מים.
+מים־חיים איז דאָך חיים,
+װאָס דאַרף נאָך דער ייִד?
+
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+משיח קומט שוין באַלד!
+
+ס׳איז אַ דור פֿון כּולע־חייב,
+זײַט ניט קײן נאַראָנים,
+און פֿון זינדיקן
+משיח גיכער קומען װעט!
+אַך, דו טאַטעלע אין הימל,
+ס׳בעטן בני־רחמנים;
+זע, משיח זאָל ניט קומען
+אַ ביסעלע צו שפּעט.
+
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+משיח קומט שוין באַלד!
+
+ס׳טאַנצן בײמער אין די װעלדער,
+שטערן אויפֿן הימל.
+רב ישׂראל, דער מחותן,
+דרײט זיך אין דער מיט.
+ס׳װעט זיך אויפֿװעקן משיח
+פֿון זײַן טיפֿן דרימל,
+װען ער װעט דערהערן
+אונדזער תּפֿילהדיקע ליד.
+
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+זאָל שוין קומען די גאולה,
+משיח קומט שוין באַלד!`,
+    portuguese: `Com o coração aflito,
+fazemos um lekhayim.
+Se a tristeza não nos deixa em paz,
+cantamos uma canção.
+Se não há um pouco de cachaça,
+vamos beber água.
+Água da vida também é vida —
+o que mais precisa o judeu?
+
+Que venha logo a redenção,
+Que venha logo a redenção,
+Que venha logo a redenção,
+Moshiekh já vem logo!
+
+É uma geração em que todos são culpados,
+não sejam tolos,
+e por causa do pecado
+Moshiekh virá mais depressa!
+Ah, Paizinho no céu,
+pedem os filhos compassivos;
+vê, que Moshiekh não venha
+um pouquinho tarde demais.
+
+Que venha logo a redenção,
+Que venha logo a redenção,
+Que venha logo a redenção,
+Moshiekh já vem logo!
+
+As árvores dançam nas florestas,
+estrelas no céu.
+Reb Yisroel, o sogro,
+gira bem no meio.
+Moshiekh vai despertar
+do seu sono profundo
+quando ouvir
+nossa canção cheia de oração.
+
+Que venha logo a redenção,
+Que venha logo a redenção,
+Que venha logo a redenção,
+Moshiekh já vem logo!`,
+    vocabulary: [
+      { yiddish: "גאולה", translit: "geule", meaning: "redenção" },
+      { yiddish: "משיח", translit: "Moshiekh", meaning: "Messias" },
+      { yiddish: "לחיים", translit: "lekhayim", meaning: "brinde / à vida" },
+      { yiddish: "אומעט", translit: "umes / umet", meaning: "tristeza" },
+      { yiddish: "בראָנפֿן", translit: "bronfn", meaning: "cachaça / bebida forte" },
+      { yiddish: "מים", translit: "mayim", meaning: "água" },
+      { yiddish: "חיים", translit: "khayim", meaning: "vida" },
+      { yiddish: "ייִד", translit: "yid", meaning: "judeu" },
+      { yiddish: "נאַראָנים", translit: "naronim", meaning: "tolos" },
+      { yiddish: "טאַטעלע", translit: "tatele", meaning: "paizinho" },
+      { yiddish: "הימל", translit: "himl", meaning: "céu" },
+      { yiddish: "ביסעלע", translit: "bisele", meaning: "um pouquinho" },
+      { yiddish: "שפּעט", translit: "shpet", meaning: "tarde" },
+      { yiddish: "בײמער", translit: "beymer", meaning: "árvores" },
+      { yiddish: "מחותן", translit: "mekhutn", meaning: "sogro / parente por casamento" },
+      { yiddish: "דרימל", translit: "driml", meaning: "sono / soneca" },
+      { yiddish: "תּפֿילהדיקע", translit: "tfiledike", meaning: "cheia de oração / orante" },
+      { yiddish: "ליד", translit: "lid", meaning: "canção" },
     ],
   },
 ];
