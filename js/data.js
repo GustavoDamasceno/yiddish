@@ -10,24 +10,24 @@
 
 const siteContent = {
   name: "Yiddish Velt Brasil",
-  tagline: "Acervo de língua, literatura e cultura",
+  tagline: "Anotações pessoais de estudo",
 
   hero: {
-    eyebrow: "Acervo cultural · Literatura · Memória",
-    title: "Um acervo vivo da cultura Yiddish",
-    text: "Explore poetas, músicas, histórias, livros e conexões entre o mundo Yiddish e a cultura brasileira.",
-    btnPrimary: "Explorar acervo",
+    eyebrow: "Estudo · Anotações · Pesquisa",
+    title: "Meu caderno de estudo da cultura Yiddish",
+    text: "Aqui guardo poetas, músicas, textos e conexões que estudo entre o mundo Yiddish e a cultura brasileira: minhas anotações, no meu ritmo.",
+    btnPrimary: "Explorar anotações",
     btnSecondary: "Aprender Yiddish",
   },
 
   categories: {
-    title: "Explore o acervo",
-    subtitle: "Navegue por categorias e descubra textos, vozes e tradições do mundo Yiddish, em português.",
+    title: "Explore as anotações",
+    subtitle: "Navegue pelas categorias e veja o que venho reunindo sobre o mundo Yiddish, em português.",
   },
 
   poets: {
     title: "Escritores e Poetas em destaque",
-    subtitle: "Vozes essenciais da poesia Yiddish moderna. Clique em um perfil para conhecer a biografia, obras e contexto histórico.",
+    subtitle: "Vozes da poesia Yiddish moderna que estudo e anoto. Clique em um perfil para ver biografia, obras e contexto.",
     btnLabel: "Ver perfil",
     viewAllBtn: "Ver todos",
     backLabel: "← Voltar aos poetas",
@@ -35,7 +35,7 @@ const siteContent = {
 
   poetsPage: {
     title: "Escritores e Poetas",
-    subtitle: "Biografias, obras e contexto de vozes da literatura Yiddish. Use a busca para encontrar um nome.",
+    subtitle: "Biografias, obras e contexto das vozes que acompanho no estudo da literatura Yiddish. Use a busca para encontrar um nome.",
     searchPlaceholder: "Buscar por nome…",
     noResults: "Nenhum poeta encontrado com esse nome.",
     backLabel: "← Voltar ao início",
@@ -43,7 +43,7 @@ const siteContent = {
 
   songsPage: {
     title: "Músicas",
-    subtitle: "Canções em Yiddish para ouvir, ler e aprender, com letra, tradução e vocabulário.",
+    subtitle: "Canções em Yiddish que estudo: para ouvir, ler e anotar letra, tradução e vocabulário.",
     searchPlaceholder: "Buscar por nome…",
     noResults: "Nenhuma música encontrada com esse nome.",
     backLabel: "← Voltar ao início",
@@ -71,12 +71,24 @@ const siteContent = {
 
   brazil: {
     title: "Yiddish no Brasil",
-    lead: "Além do acervo literário, o projeto busca registrar conexões entre a cultura Yiddish e a história judaica no Brasil, passando por comunidades como Curitiba, São Paulo e Porto Alegre.",
+    lead: "Além da literatura, registro aqui conexões que estudo entre a cultura Yiddish e a história judaica no Brasil, passando por comunidades como Curitiba, São Paulo e Porto Alegre.",
   },
 
   beginners: {
     title: "Para iniciantes",
-    subtitle: "Uma trilha gentil para quem quer dar os primeiros passos no idioma e na cultura Yiddish.",
+    subtitle: "Uma trilha gentil com o que uso para dar (e revisitar) os primeiros passos no idioma e na cultura Yiddish.",
+  },
+
+  about: {
+    title: "Sobre",
+    subtitle: "O que é este espaço e para que ele existe.",
+    backLabel: "← Voltar ao início",
+    author: "Gustavo Damasceno",
+    paragraphs: [
+      "O Yiddish Velt Brasil é o meu lugar de armazenar estudo e pesquisa sobre a língua, a literatura e a cultura Yiddish.",
+      "Não é um acervo institucional nem um portal oficial. É um caderno digital pessoal: anotações, leituras, músicas, ferramentas e caminhos que vou reunindo enquanto aprendo.",
+      "Tudo o que está aqui reflete o meu processo de estudo: incompleto, em construção e aberto a revisão. Se você passou por aqui, seja bem-vindo a acompanhar esse percurso.",
+    ],
   },
 
   alefbeys: {
@@ -146,9 +158,9 @@ const siteContent = {
   },
 
   footer: {
-    desc: "Um projeto em construção dedicado à preservação, estudo e difusão da língua e cultura Yiddish em português.",
-    mission: "Feito para preservar, estudar e compartilhar a cultura Yiddish.",
-    copy: "© 2025 Yidish Velt Brasil. Conteúdos em revisão.",
+    desc: "Caderno pessoal de estudo e pesquisa sobre língua, literatura e cultura Yiddish, em português.",
+    mission: "Anotações de Gustavo Damasceno · em construção e em constante revisão.",
+    copy: "© 2025 Yiddish Velt Brasil. Conteúdos pessoais de estudo.",
   },
 
   theme: {
@@ -170,11 +182,11 @@ const navLinks = [
   { label: "Músicas", href: "pages/musicas.html" },
   { label: "Livros", href: "#inicio" },
   { label: "Yiddish no Brasil", href: "#brasil" },
-  { label: "Sobre", href: "#topo" },
+  { label: "Sobre", href: "pages/sobre.html" },
 ];
 
 const footerLinks = [
-  { label: "Sobre o projeto", href: "#" },
+  { label: "Sobre", href: "pages/sobre.html" },
   { label: "Contribuir", href: "#" },
   { label: "Bibliografia", href: "#" },
   { label: "Contato", href: "#" },

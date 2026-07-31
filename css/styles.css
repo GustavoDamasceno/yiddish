@@ -1908,6 +1908,35 @@ html[data-theme="dark"] {
   line-height: 1.7;
 }
 
+.about-main {
+  padding: 2rem 0 4.5rem;
+}
+
+.about-article {
+  max-width: 640px;
+}
+
+.about-article__author {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-accent);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-article__text {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.about-article__text:last-child {
+  margin-bottom: 0;
+}
+
 .poets-search-wrap {
   margin-bottom: 2rem;
   max-width: 420px;
