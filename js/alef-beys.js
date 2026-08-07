@@ -19,10 +19,17 @@ function renderAlefBeysSections() {
     const cardsHTML = section.items
       .map(
         (item) => `
-      <article class="alphabet-card">
+      <button
+        type="button"
+        class="alphabet-card"
+        data-letter="${item.letter}"
+        data-translit="${item.translit}"
+        aria-pressed="false"
+        aria-label="${item.name}: ${item.letter}. Clique para ver a transliteração ${item.translit}."
+      >
         <span class="alphabet-card__letter" lang="yi" dir="rtl">${item.letter}</span>
         <span class="alphabet-card__name">${item.name}</span>
-      </article>`
+      </button>`
       )
       .join("");
 
@@ -38,6 +45,29 @@ function renderAlefBeysSections() {
 
     container.appendChild(block);
   });
+
+  container.querySelectorAll(".alphabet-card").forEach((card) => {
+    card.addEventListener("click", () => toggleAlphabetCard(card));
+  });
+}
+
+function toggleAlphabetCard(card) {
+  const letter = card.dataset.letter;
+  const translit = card.dataset.translit;
+  const glyph = card.querySelector(".alphabet-card__letter");
+  const showingTranslit = card.classList.toggle("is-showing-translit");
+
+  if (showingTranslit) {
+    glyph.textContent = translit;
+    glyph.removeAttribute("lang");
+    glyph.removeAttribute("dir");
+  } else {
+    glyph.textContent = letter;
+    glyph.setAttribute("lang", "yi");
+    glyph.setAttribute("dir", "rtl");
+  }
+
+  card.setAttribute("aria-pressed", String(showingTranslit));
 }
 
 function setAlphabetFontStyle(style) {
