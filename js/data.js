@@ -79,6 +79,84 @@ const siteContent = {
     subtitle: "Uma trilha gentil com o que uso para dar (e revisitar) os primeiros passos no idioma e na cultura Yiddish.",
   },
 
+  grammarPage: {
+    title: "Gramática",
+    subtitle: "Tópicos de gramática Yiddish que estudo e anoto. Clique em um card para abrir as anotações.",
+    backLabel: "← Voltar aos iniciantes",
+    comingSoon: "Em breve",
+  },
+
+  pronounsPage: {
+    title: "Pronomes",
+    subtitle: "Pronomes pessoais em Yiddish: tabela, frases de exemplo e um treino rápido.",
+    backLabel: "← Voltar à gramática",
+    tableTitle: "Pronomes pessoais",
+    tableHeaders: {
+      yiddish: "Yiddish",
+      translit: "Transliteração",
+      meaning: "Português",
+      person: "Pessoa",
+    },
+    phrasesTitle: "Frases de exemplo",
+    practiceBtn: "Treinar pronomes",
+    quiz: {
+      title: "Treino de pronomes",
+      closeLabel: "Fechar",
+      progressLabel: "Pergunta {current} de {total}",
+      checkLabel: "Verificar",
+      nextLabel: "Próxima",
+      resultLabel: "Ver resultado",
+      correctLabel: "Correto!",
+      wrongLabel: "Quase! A resposta certa é:",
+      finishTitle: "Treino concluído",
+      finishText: "Você acertou {score} de {total}.",
+      restartLabel: "Treinar de novo",
+      closeResultLabel: "Fechar",
+    },
+  },
+
+  verbsPage: {
+    title: "Verbos",
+    subtitle: "Conjugação no presente: verbos regulares, irregulares e um treino rápido.",
+    backLabel: "← Voltar à gramática",
+    regularTitle: "Verbos regulares",
+    regularNote:
+      "No presente, tire o -n / -en do infinitivo para achar o radical e acrescente a terminação da pessoa.",
+    endingsTitle: "Terminações do presente",
+    endingsHeaders: {
+      person: "Pessoa",
+      ending: "Terminação",
+      example: "Exemplo (lernen)",
+      rule: "Regra",
+    },
+    exampleTitle: "Exemplo completo: lernen (aprender / estudar)",
+    irregularTitle: "Verbos irregulares",
+    irregularNote: "Alguns verbos mudam o radical ou têm formas próprias. Os mais importantes são zayn (ser/estar) e hobn (ter).",
+    otherIrregularTitle: "Outros irregulares frequentes",
+    otherHeaders: {
+      yiddish: "Yiddish",
+      translit: "Transliteração",
+      meaning: "Português",
+      note: "Observação",
+    },
+    phrasesTitle: "Frases de exemplo",
+    practiceBtn: "Treinar verbos",
+    quiz: {
+      title: "Treino de verbos",
+      closeLabel: "Fechar",
+      progressLabel: "Pergunta {current} de {total}",
+      checkLabel: "Verificar",
+      nextLabel: "Próxima",
+      resultLabel: "Ver resultado",
+      correctLabel: "Correto!",
+      wrongLabel: "Quase! A resposta certa é:",
+      finishTitle: "Treino concluído",
+      finishText: "Você acertou {score} de {total}.",
+      restartLabel: "Treinar de novo",
+      closeResultLabel: "Fechar",
+    },
+  },
+
   about: {
     title: "Sobre",
     subtitle: "O que é este espaço e para que ele existe.",
@@ -418,14 +496,322 @@ const learningPath = [
     href: "pages/musicas.html",
   },
   {
-    icon: "📄",
-    title: "Pequenos textos",
-    description: "Poemas curtos e trechos comentados para prática de leitura.",
+    icon: "✎",
+    title: "Gramática",
+    description: "Pronomes, verbos e outros tópicos essenciais para montar frases em Yiddish.",
+    href: "pages/gramatica.html",
   },
   {
     icon: "🌍",
     title: "Cultura e contexto",
     description: "História, tradições e referências que ajudam a compreender o idioma.",
+  },
+];
+
+// ---- Gramática (tópicos) ----
+// Adicione novos cards aqui. Depois: href: "pages/seu-topico.html"
+const grammarTopics = [
+  {
+    id: "pronomes",
+    icon: "איר",
+    title: "Pronomes",
+    description: "Pessoais, possessivos e demonstrativos: ikh, du, er, zi, mir, ir, zey…",
+    href: "pages/pronomes.html",
+  },
+  {
+    id: "verbos",
+    icon: "זײַן",
+    title: "Verbos",
+    description: "Conjugação no presente, passado e futuro; verbos auxiliares e irregulares.",
+    href: "pages/verbos.html",
+  },
+  {
+    id: "artigos",
+    icon: "דער",
+    title: "Artigos",
+    description: "Der, di, dos e o artigo indefinido; gênero e número do substantivo.",
+  },
+  {
+    id: "substantivos",
+    icon: "הױז",
+    title: "Substantivos",
+    description: "Gênero, plural e formação de palavras no Yiddish.",
+  },
+  {
+    id: "adjetivos",
+    icon: "שײן",
+    title: "Adjetivos",
+    description: "Concordância, graus e posição do adjetivo na frase.",
+  },
+  {
+    id: "preposicoes",
+    icon: "אין",
+    title: "Preposições",
+    description: "In, af, mit, fun, tsu e outras preposições frequentes.",
+  },
+  {
+    id: "negacao",
+    icon: "נישט",
+    title: "Negação e perguntas",
+    description: "Nisht, keyn, vos, vu, ven e a ordem das palavras nas perguntas.",
+  },
+  {
+    id: "numeros",
+    icon: "1",
+    title: "Números",
+    description: "Cardinais, ordinais e usos no dia a dia.",
+  },
+];
+
+// ---- Pronomes ----
+const pronounsTable = [
+  { person: "1ª sing.", yiddish: "איך", translit: "ikh", meaning: "eu" },
+  { person: "2ª sing.", yiddish: "דו", translit: "du", meaning: "você / tu" },
+  { person: "3ª sing. m.", yiddish: "ער", translit: "er", meaning: "ele" },
+  { person: "3ª sing. f.", yiddish: "זי", translit: "zi", meaning: "ela" },
+  { person: "3ª sing. n.", yiddish: "עס", translit: "es", meaning: "isso / ele (neutro)" },
+  { person: "1ª plur.", yiddish: "מיר", translit: "mir", meaning: "nós" },
+  { person: "2ª plur.", yiddish: "איר", translit: "ir", meaning: "vocês" },
+  { person: "3ª plur.", yiddish: "זיי", translit: "zey", meaning: "eles / elas" },
+];
+
+const pronounsPhrases = [
+  {
+    yiddish: "איך בין אַ סטודענט.",
+    translit: "Ikh bin a student.",
+    portuguese: "Eu sou um estudante.",
+  },
+  {
+    yiddish: "דו לערנסט ייִדיש.",
+    translit: "Du lernst yidish.",
+    portuguese: "Você estuda Yiddish.",
+  },
+  {
+    yiddish: "ער לייענט אַ בוך.",
+    translit: "Er leyent a bukh.",
+    portuguese: "Ele lê um livro.",
+  },
+  {
+    yiddish: "זי שרײַבט אַ בריוו.",
+    translit: "Zi shraybt a briv.",
+    portuguese: "Ela escreve uma carta.",
+  },
+  {
+    yiddish: "מיר זײַנען גוטע פֿרײַנד.",
+    translit: "Mir zaynen gute fraynd.",
+    portuguese: "Nós somos bons amigos.",
+  },
+  {
+    yiddish: "זיי קומען פֿון בראַזיל.",
+    translit: "Zey kumen fun brazil.",
+    portuguese: "Eles vêm do Brasil.",
+  },
+];
+
+const pronounsQuiz = [
+  {
+    prompt: "O que significa este pronome?",
+    yiddish: "איך",
+    translit: "ikh",
+    options: ["eu", "você", "ele", "nós"],
+    answer: "eu",
+  },
+  {
+    prompt: "Como se diz \"você\" em Yiddish (transliteração)?",
+    options: ["du", "ikh", "er", "mir"],
+    answer: "du",
+  },
+  {
+    prompt: "Qual é o pronome para \"ela\"?",
+    yiddish: "?",
+    options: ["זי", "ער", "מיר", "דו"],
+    answer: "זי",
+  },
+  {
+    prompt: "O que significa \"mir\"?",
+    options: ["nós", "eu", "eles", "você"],
+    answer: "nós",
+  },
+  {
+    prompt: "Qual transliteração corresponde a זיי?",
+    options: ["zey", "zi", "er", "ir"],
+    answer: "zey",
+  },
+  {
+    prompt: "Na frase \"Er leyent a bukh\", quem lê o livro?",
+    options: ["ele", "ela", "eu", "nós"],
+    answer: "ele",
+  },
+  {
+    prompt: "Como se diz \"vocês\" em Yiddish (transliteração)?",
+    options: ["ir", "mir", "zey", "du"],
+    answer: "ir",
+  },
+  {
+    prompt: "Qual pronome completa: \"___ bin a student\" (eu sou…)?",
+    options: ["Ikh", "Du", "Zi", "Zey"],
+    answer: "Ikh",
+  },
+];
+
+// ---- Verbos ----
+const regularVerbEndings = [
+  {
+    person: "ikh",
+    ending: "(radical)",
+    example: "ikh lern",
+    rule: "Usa o radical",
+  },
+  {
+    person: "du",
+    ending: "-st",
+    example: "du lernst",
+    rule: "Radical + -st",
+  },
+  {
+    person: "er / zi / es",
+    ending: "-t",
+    example: "er lernt",
+    rule: "Radical + -t",
+  },
+  {
+    person: "mir",
+    ending: "-n / -en",
+    example: "mir lernen",
+    rule: "Como o infinitivo",
+  },
+  {
+    person: "ir",
+    ending: "-t",
+    example: "ir lernt",
+    rule: "Igual à 3ª pessoa do singular",
+  },
+  {
+    person: "zey",
+    ending: "-n / -en",
+    example: "zey lernen",
+    rule: "Como o infinitivo / mir",
+  },
+];
+
+const regularVerbExample = [
+  { person: "ikh", yiddish: "איך לערן", translit: "ikh lern", meaning: "eu estudo" },
+  { person: "du", yiddish: "דו לערנסט", translit: "du lernst", meaning: "você estuda" },
+  { person: "er / zi / es", yiddish: "ער לערנט", translit: "er lernt", meaning: "ele estuda" },
+  { person: "mir", yiddish: "מיר לערנען", translit: "mir lernen", meaning: "nós estudamos" },
+  { person: "ir", yiddish: "איר לערנט", translit: "ir lernt", meaning: "vocês estudam" },
+  { person: "zey", yiddish: "זיי לערנען", translit: "zey lernen", meaning: "eles estudam" },
+];
+
+const irregularVerbTables = [
+  {
+    id: "zayn",
+    title: "זײַן · zayn · ser / estar",
+    rows: [
+      { person: "ikh", yiddish: "איך בין", translit: "ikh bin", meaning: "eu sou / estou" },
+      { person: "du", yiddish: "דו ביסט", translit: "du bist", meaning: "você é / está" },
+      { person: "er / zi / es", yiddish: "ער איז", translit: "er iz", meaning: "ele é / está" },
+      { person: "mir", yiddish: "מיר זײַנען", translit: "mir zaynen", meaning: "nós somos / estamos" },
+      { person: "ir", yiddish: "איר זײַט", translit: "ir zayt", meaning: "vocês são / estão" },
+      { person: "zey", yiddish: "זיי זײַנען", translit: "zey zaynen", meaning: "eles são / estão" },
+    ],
+  },
+  {
+    id: "hobn",
+    title: "האָבן · hobn · ter",
+    rows: [
+      { person: "ikh", yiddish: "איך האָב", translit: "ikh hob", meaning: "eu tenho" },
+      { person: "du", yiddish: "דו האָסט", translit: "du host", meaning: "você tem" },
+      { person: "er / zi / es", yiddish: "ער האָט", translit: "er hot", meaning: "ele tem" },
+      { person: "mir", yiddish: "מיר האָבן", translit: "mir hobn", meaning: "nós temos" },
+      { person: "ir", yiddish: "איר האָט", translit: "ir hot", meaning: "vocês têm" },
+      { person: "zey", yiddish: "זיי האָבן", translit: "zey hobn", meaning: "eles têm" },
+    ],
+  },
+];
+
+const otherIrregularVerbs = [
+  { yiddish: "גײן", translit: "geyn", meaning: "ir", note: "ikh gey, du geyst, er geyt…" },
+  { yiddish: "קומען", translit: "kumen", meaning: "vir", note: "ikh kum, du kumst, er kumt…" },
+  { yiddish: "װיסן", translit: "visn", meaning: "saber", note: "ikh veys, du veyst, er veyst…" },
+  { yiddish: "טאָן", translit: "ton", meaning: "fazer", note: "ikh tu, du tust, er tut…" },
+  { yiddish: "געבן", translit: "gebn", meaning: "dar", note: "ikh gib, du gibst, er git…" },
+  { yiddish: "עסן", translit: "esn", meaning: "comer", note: "ikh es, du est, er est…" },
+];
+
+const verbsPhrases = [
+  {
+    yiddish: "איך לערן ייִדיש.",
+    translit: "Ikh lern yidish.",
+    portuguese: "Eu estudo Yiddish.",
+  },
+  {
+    yiddish: "דו לערנסט גוט.",
+    translit: "Du lernst gut.",
+    portuguese: "Você estuda bem.",
+  },
+  {
+    yiddish: "ער איז אַ לערער.",
+    translit: "Er iz a lerer.",
+    portuguese: "Ele é um professor.",
+  },
+  {
+    yiddish: "זי האָט אַ בוך.",
+    translit: "Zi hot a bukh.",
+    portuguese: "Ela tem um livro.",
+  },
+  {
+    yiddish: "מיר גײען אין שול.",
+    translit: "Mir geyn in shul.",
+    portuguese: "Nós vamos à escola.",
+  },
+  {
+    yiddish: "זיי קומען מאָרגן.",
+    translit: "Zey kumen morgn.",
+    portuguese: "Eles vêm amanhã.",
+  },
+];
+
+const verbsQuiz = [
+  {
+    prompt: "Qual é a terminação de \"du\" no presente?",
+    options: ["-st", "-t", "-n", "-e"],
+    answer: "-st",
+  },
+  {
+    prompt: "Como fica \"lernen\" com \"er\"?",
+    options: ["lernt", "lernst", "lernen", "lern"],
+    answer: "lernt",
+  },
+  {
+    prompt: "Qual forma corresponde a \"eu sou\"?",
+    options: ["ikh bin", "ikh hob", "ikh lern", "ikh gey"],
+    answer: "ikh bin",
+  },
+  {
+    prompt: "Complete: du ___ (hobn).",
+    options: ["host", "hot", "hob", "hobn"],
+    answer: "host",
+  },
+  {
+    prompt: "A 1ª pessoa do plural (mir) nos regulares fica como o…",
+    options: ["infinitivo", "radical sozinho", "mesmo que du", "mesmo que er"],
+    answer: "infinitivo",
+  },
+  {
+    prompt: "O que significa \"er iz\"?",
+    options: ["ele é / está", "ele tem", "ele vai", "ele come"],
+    answer: "ele é / está",
+  },
+  {
+    prompt: "Qual é a forma de \"ir\" (vocês) com lernen?",
+    options: ["lernt", "lernst", "lernen", "lern"],
+    answer: "lernt",
+  },
+  {
+    prompt: "\"ikh hob\" significa:",
+    options: ["eu tenho", "eu sou", "eu vou", "eu sei"],
+    answer: "eu tenho",
   },
 ];
 

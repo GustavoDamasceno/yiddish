@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pronomes pessoais em Yiddish · tabela, frases e treino · Yiddish Velt Brasil">
+  <title>Pronomes · Yiddish Velt Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('yiddishvelt-theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="pronouns">
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-block">
+        <span class="logo-title" id="site-name"></span>
+        <span class="logo-subtitle" id="site-tagline"></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list" id="nav-list"></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="tool-main">
+    <div class="container tool-container">
+      <a href="gramatica.html" class="tool-back" id="pronouns-back"></a>
+
+      <header class="tool-header">
+        <h1 class="tool-title" id="pronouns-title"></h1>
+        <p class="tool-subtitle" id="pronouns-subtitle"></p>
+      </header>
+
+      <section class="lesson-section" aria-labelledby="pronouns-table-title">
+        <h2 class="lesson-section__title" id="pronouns-table-title"></h2>
+        <div class="vocab-table-wrap" id="pronouns-table-wrap"></div>
+      </section>
+
+      <section class="lesson-section" aria-labelledby="pronouns-phrases-title">
+        <h2 class="lesson-section__title" id="pronouns-phrases-title"></h2>
+        <div class="phrase-list" id="pronouns-phrases"></div>
+      </section>
+
+      <div class="lesson-actions">
+        <button type="button" class="btn btn-primary" id="pronouns-practice-btn"></button>
+      </div>
+    </div>
+  </main>
+
+  <div
+    class="modal-overlay"
+    id="quiz-modal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quiz-title"
+  >
+    <div class="modal quiz-modal" role="document">
+      <button type="button" class="modal-close" id="quiz-close" aria-label="Fechar">&times;</button>
+      <div class="modal-inner" id="quiz-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name" id="footer-name"></p>
+        <p class="footer-desc" id="footer-desc"></p>
+        <p class="footer-mission" id="footer-mission"></p>
+      </div>
+      <nav class="footer-nav" aria-label="Links do rodapé">
+        <ul class="footer-links" id="footer-links"></ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy" id="footer-copy"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/pronomes.js"></script>
+</body>
+</html>

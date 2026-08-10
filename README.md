@@ -10,7 +10,7 @@ Caderno digital pessoal de estudo e pesquisa sobre a língua, a literatura e a c
 - **Músicas** — letra (Yiddish, transliteração YIVO e português), vocabulário e vídeo
 - **Alef-beys** — alfabeto por grupos, com letra impressa/cursiva e transliteração ao clicar
 - **Teclado fonético** — digite em YIVO e veja o texto em Yiddish
-- **Yiddish no Brasil** — conexões com a experiência judaica brasileira
+- **Yiddish no Brasil** — conexões com a experiência judaica brasileira (em construção, ainda não subiu)
 - **Sobre** — o propósito deste caderno de estudo
 
 ## Estrutura do projeto

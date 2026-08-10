@@ -15,6 +15,7 @@
   --color-card: #ffffff;
   --color-gradient-soft: #d4dce8;
   --color-border: rgba(26, 34, 52, 0.09);
+  --color-border-strong: rgba(26, 34, 52, 0.22);
   --color-shadow: rgba(26, 34, 52, 0.07);
   --color-shadow-hover: rgba(26, 34, 52, 0.13);
   --color-overlay: rgba(26, 34, 52, 0.58);
@@ -49,6 +50,7 @@
   --color-card: #1a2030;
   --color-gradient-soft: #252d3d;
   --color-border: rgba(232, 236, 243, 0.1);
+  --color-border-strong: rgba(232, 236, 243, 0.28);
   --color-shadow: rgba(0, 0, 0, 0.28);
   --color-shadow-hover: rgba(0, 0, 0, 0.42);
   --color-overlay: rgba(0, 0, 0, 0.72);
@@ -560,6 +562,10 @@ html[data-theme="dark"] {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.cards-grid--grammar {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* Category card */
 
 .category-card {
@@ -806,6 +812,79 @@ html[data-theme="dark"] {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-accent);
+}
+
+/* Grammar topic cards */
+
+.grammar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.35rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 18px var(--color-shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.grammar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px var(--color-shadow-hover);
+}
+
+.grammar-card--link {
+  cursor: pointer;
+}
+
+.grammar-card--link:hover {
+  border-color: rgba(91, 127, 166, 0.35);
+}
+
+.grammar-card--link:focus-visible {
+  outline: 2px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+
+.grammar-card__icon {
+  display: block;
+  font-family: "David Libre", "Times New Roman", "Noto Sans Hebrew", "Arial Hebrew", serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.grammar-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.grammar-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.grammar-card__cta {
+  display: inline-block;
+  margin-top: 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.grammar-card__badge {
+  display: inline-block;
+  margin-top: 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 /* ---- Ferramentas (teclado etc.) ---- */
@@ -1281,6 +1360,244 @@ html[data-theme="dark"] {
   .modal-inner {
     padding: 1.75rem 1.25rem 1.5rem;
   }
+}
+
+/* ---- Lição de gramática (pronomes etc.) ---- */
+
+.lesson-section {
+  margin-bottom: 2.5rem;
+}
+
+.lesson-section__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.lesson-section__subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.85rem;
+  color: var(--color-text);
+}
+
+.lesson-note {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 0.5rem;
+  padding: 0.9rem 1rem;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-accent-light);
+}
+
+.lesson-subsection {
+  margin-bottom: 0.5rem;
+}
+
+.lesson-ending {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: transparent;
+}
+
+.lesson-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.phrase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.phrase-card {
+  padding: 1.1rem 1.2rem;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.phrase-card__yiddish {
+  font-family: "David Libre", "Times New Roman", "Noto Sans Hebrew", "Arial Hebrew", serif;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.phrase-card__translit {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.phrase-card__pt {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Quiz modal ---- */
+
+.quiz-modal {
+  max-width: 520px;
+}
+
+.quiz-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-right: 2rem;
+}
+
+.quiz-progress-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.45rem;
+}
+
+.quiz-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-bg-soft);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-progress__bar {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.quiz-prompt {
+  margin-bottom: 1.25rem;
+}
+
+.quiz-prompt__text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-prompt__yiddish {
+  font-family: "David Libre", "Times New Roman", "Noto Sans Hebrew", "Arial Hebrew", serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.quiz-prompt__translit {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-option {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg-soft);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: rgba(91, 127, 166, 0.45);
+  transform: translateY(-1px);
+}
+
+.quiz-option.is-selected {
+  border-color: var(--color-accent);
+  background: rgba(91, 127, 166, 0.12);
+}
+
+.quiz-option.is-correct {
+  border-color: #2f8f5b;
+  background: rgba(47, 143, 91, 0.14);
+}
+
+.quiz-option.is-wrong {
+  border-color: #c45c5c;
+  background: rgba(196, 92, 92, 0.12);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-feedback {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.quiz-feedback.is-correct {
+  color: #2f8f5b;
+}
+
+.quiz-feedback.is-wrong {
+  color: #c45c5c;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.quiz-actions--result {
+  justify-content: stretch;
+  flex-wrap: wrap;
+}
+
+.quiz-actions--result .btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.quiz-result-score {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0.5rem 0 0.75rem;
+}
+
+.quiz-result-text {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 /* ---- Perfil do poeta (página inteira) ---- */
@@ -1850,7 +2167,7 @@ html[data-theme="dark"] {
 
 .vocab-table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   background: var(--color-bg);
 }
@@ -1865,7 +2182,13 @@ html[data-theme="dark"] {
 .vocab-table td {
   padding: 0.85rem 1.1rem;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-strong);
+  border-right: 1px solid var(--color-border-strong);
+}
+
+.vocab-table th:last-child,
+.vocab-table td:last-child {
+  border-right: none;
 }
 
 .vocab-table th {
@@ -1875,6 +2198,7 @@ html[data-theme="dark"] {
   text-transform: uppercase;
   color: var(--color-accent);
   background: var(--color-bg-soft);
+  border-bottom: 2px solid var(--color-border-strong);
 }
 
 .vocab-table tbody tr:last-child td {
@@ -1883,6 +2207,17 @@ html[data-theme="dark"] {
 
 .vocab-table tbody tr:hover td {
   background: rgba(232, 237, 244, 0.35);
+}
+
+[data-theme="dark"] .vocab-table th,
+[data-theme="dark"] .vocab-table td {
+  border-bottom-color: rgba(232, 236, 243, 0.28);
+  border-right-color: rgba(232, 236, 243, 0.28);
+}
+
+[data-theme="dark"] .vocab-table th {
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(232, 236, 243, 0.35);
 }
 
 [data-theme="dark"] .vocab-table tbody tr:hover td {
@@ -2091,6 +2426,7 @@ html[data-theme="dark"] {
 
   .cards-grid--categories,
   .cards-grid--brazil,
+  .cards-grid--grammar,
   .learning-path {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2185,6 +2521,7 @@ html[data-theme="dark"] {
   .cards-grid--poets-all,
   .cards-grid--songs,
   .cards-grid--brazil,
+  .cards-grid--grammar,
   .learning-path {
     grid-template-columns: 1fr;
   }
