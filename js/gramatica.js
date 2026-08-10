@@ -26,7 +26,6 @@ function createGrammarCard(topic) {
   }
 
   article.innerHTML = `
-    <span class="grammar-card__icon" lang="yi" dir="rtl" aria-hidden="true">${topic.icon}</span>
     <h2 class="grammar-card__title">${topic.title}</h2>
     <p class="grammar-card__desc">${topic.description}</p>
     ${
