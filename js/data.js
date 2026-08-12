@@ -72,6 +72,7 @@ const siteContent = {
   brazil: {
     title: "Yiddish no Brasil",
     lead: "Além da literatura, registro aqui conexões que estudo entre a cultura Yiddish e a história judaica no Brasil, passando por comunidades como Curitiba, São Paulo e Porto Alegre.",
+    comingSoon: "Em breve",
   },
 
   beginners: {
@@ -84,6 +85,23 @@ const siteContent = {
     subtitle: "Tópicos de gramática Yiddish que estudo e anoto. Clique em um card para abrir as anotações.",
     backLabel: "← Voltar aos iniciantes",
     comingSoon: "Em breve",
+  },
+
+  culturePage: {
+    title: "Cultura e contexto",
+    subtitle: "Filmes, histórias e outras referências que ajudam a situar a língua e o mundo Yiddish.",
+    backLabel: "← Voltar aos iniciantes",
+    comingSoon: "Em breve",
+  },
+
+  filmsPage: {
+    title: "Filmes",
+    subtitle: "Cinema em Yiddish ou sobre o mundo ashkenazim que estou reunindo neste caderno.",
+    backLabel: "← Voltar à cultura",
+    watchBtn: "Assistir",
+    closeLabel: "Fechar",
+    fileProtocolHint:
+      "O YouTube bloqueia o player quando a página é aberta como arquivo local (file://). Abra o site por um servidor, por exemplo: npx serve .",
   },
 
   pronounsPage: {
@@ -504,7 +522,8 @@ const learningPath = [
   {
     icon: "🌍",
     title: "Cultura e contexto",
-    description: "História, tradições e referências que ajudam a compreender o idioma.",
+    description: "Filmes, histórias, tradições e outras referências que ajudam a compreender o idioma.",
+    href: "pages/cultura.html",
   },
 ];
 
@@ -560,6 +579,54 @@ const grammarTopics = [
     icon: "1",
     title: "Números",
     description: "Cardinais, ordinais e usos no dia a dia.",
+  },
+];
+
+// ---- Cultura e contexto (tópicos) ----
+const cultureTopics = [
+  {
+    id: "filmes",
+    title: "Filmes",
+    description: "Cinema em Yiddish ou sobre o mundo ashkenazim: títulos, notas e recomendações.",
+    href: "pages/filmes.html",
+  },
+  {
+    id: "historias",
+    title: "Histórias",
+    description: "Contos, narrativas e trechos que ajudam a sentir o idioma em contexto.",
+  },
+  {
+    id: "teatro",
+    title: "Teatro",
+    description: "Peças, companhias e a tradição do teatro Yiddish.",
+  },
+  {
+    id: "tradicoes",
+    title: "Tradições",
+    description: "Costumes, festas e práticas culturais ligadas à vida judaica ashkenazim.",
+  },
+  {
+    id: "historia",
+    title: "História",
+    description: "Contextos históricos que atravessam a língua e a literatura Yiddish.",
+  },
+  {
+    id: "livros",
+    title: "Livros",
+    description: "Leituras, antologias e obras de referência para estudar com calma.",
+  },
+];
+
+// ---- Filmes ----
+const films = [
+  {
+    id: "tevya",
+    title: "Tevya",
+    year: "1939",
+    image: "img/tevya.png",
+    youtubeId: "_i-enqZ-9zQ",
+    description:
+      "Criado em 1939 por Maurice Schwartz, Miriam Risselle & Rebecca Weintraub.",
   },
 ];
 

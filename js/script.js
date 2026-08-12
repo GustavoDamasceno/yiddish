@@ -64,6 +64,7 @@ function renderBrazil() {
       <span class="brazil-card__icon" aria-hidden="true">${card.icon}</span>
       <h3 class="brazil-card__title">${card.title}</h3>
       <p class="brazil-card__desc">${card.description}</p>
+      <span class="brazil-card__badge">${siteContent.brazil.comingSoon}</span>
     `;
     grid.appendChild(article);
   });
