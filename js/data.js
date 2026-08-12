@@ -101,7 +101,7 @@ const siteContent = {
     watchBtn: "Assistir",
     closeLabel: "Fechar",
     fileProtocolHint:
-      "O YouTube bloqueia o player quando a página é aberta como arquivo local (file://). Abra o site por um servidor, por exemplo: npx serve .",
+      "O player não funciona bem quando a página é aberta como arquivo local (file://). Abra o site por um servidor, por exemplo: npx serve .",
   },
 
   pronounsPage: {
@@ -624,7 +624,7 @@ const films = [
     title: "Tevya",
     year: "1939",
     image: "img/tevya.png",
-    youtubeId: "_i-enqZ-9zQ",
+    twitterId: "2043360658800980212",
     description:
       "Criado em 1939 por Maurice Schwartz, Miriam Risselle & Rebecca Weintraub.",
   },

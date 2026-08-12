@@ -1496,6 +1496,22 @@ html[data-theme="dark"] {
   border: 0;
 }
 
+.film-modal__tweet {
+  width: 100%;
+  min-height: 520px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-soft);
+}
+
+.film-modal__tweet iframe {
+  width: 100%;
+  min-height: 520px;
+  height: 70vh;
+  max-height: 720px;
+  border: 0;
+}
+
 .quiz-title {
   font-family: var(--font-serif);
   font-size: clamp(1.4rem, 3vw, 1.75rem);
