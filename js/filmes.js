@@ -3,10 +3,6 @@
    Dados em data.js → films
    ============================================================ */
 
-function filmHasPlayer(film) {
-  return Boolean(film.youtubeId || film.twitterId);
-}
-
 function createFilmCardElement(film) {
   const article = document.createElement("article");
   article.className = "poet-card";
@@ -30,7 +26,7 @@ function createFilmCardElement(film) {
     <p class="poet-card__desc">${film.description}</p>
   `;
 
-  if (filmHasPlayer(film)) {
+  if (film.youtubeId) {
     const watchBtn = document.createElement("button");
     watchBtn.type = "button";
     watchBtn.className = "btn btn-primary btn-small poet-card__btn";
@@ -52,10 +48,6 @@ function renderFilmCards() {
   });
 }
 
-function getEmbedTheme() {
-  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-}
-
 function buildFilmPlayerHTML(film) {
   const isFileProtocol = window.location.protocol === "file:";
 
@@ -64,24 +56,6 @@ function buildFilmPlayerHTML(film) {
       <h2 class="film-modal__title" id="film-modal-title">${film.title}</h2>
       <div class="song-video song-video--blocked">
         <p class="song-video__message">${siteContent.filmsPage.fileProtocolHint}</p>
-      </div>
-    `;
-  }
-
-  if (film.twitterId) {
-    const theme = getEmbedTheme();
-    const embedSrc = `https://platform.twitter.com/embed/Tweet.html?id=${film.twitterId}&dnt=true&theme=${theme}`;
-
-    return `
-      <h2 class="film-modal__title" id="film-modal-title">${film.title}</h2>
-      <div class="film-modal__tweet">
-        <iframe
-          src="${embedSrc}"
-          title="${film.title}"
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
       </div>
     `;
   }
