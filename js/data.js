@@ -628,6 +628,24 @@ const films = [
     description:
       "Criado em 1939 por Maurice Schwartz, Miriam Risselle & Rebecca Weintraub.",
   },
+  {
+    id: "the-dybbuk",
+    title: "The Dybbuk",
+    year: "1937",
+    image: "img/dybbuk.png",
+    youtubeId: "nmvKuukW-I8",
+    description:
+      "Dirigido em 1937 por Michał Waszyński e coreografado por Judith Berg.",
+  },
+  {
+    id: "der-golem",
+    title: "Der Golem",
+    year: "1920",
+    image: "img/golem.png",
+    youtubeId: "Ni_0ehzcZ64",
+    description:
+      "Em meados do século 19, uma comunidade judaica da cidade de Praga é ameaçada por um decreto do imperador. Na tentativa de salvar seu povo da desgraça, o Rabino Loew dá vida a um Golem.",
+  },
 ];
 
 // ---- Pronomes ----
