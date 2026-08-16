@@ -278,7 +278,7 @@ const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Poetas", href: "pages/poetas.html" },
   { label: "Músicas", href: "pages/musicas.html" },
-  { label: "Livros", href: "#inicio" },
+  { label: "Filmes", href: "pages/filmes.html" },
   { label: "Yiddish no Brasil", href: "#brasil" },
   { label: "Sobre", href: "pages/sobre.html" },
 ];
