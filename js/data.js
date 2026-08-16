@@ -711,6 +711,51 @@ const films = [
     description:
       "Filme norte-americano de 1975, do gênero drama, dirigido por Joan Micklin Silver e estrelado por Steven Keats e Carol Kane.",
   },
+  {
+    id: "got-mentsh-un-tayvl",
+    title: "Got, Mentsh, un Tayvl",
+    year: "1950",
+    image: "img/GotMentshunTayvl.png",
+    driveId: "1KSDWIY420THlaQvERnKi1nVD5Q64FxHO",
+    description:
+      "Drama em Yiddish lançado nos Estados Unidos em 21 de janeiro de 1950. Dirigido por Joseph Seiden e estrelado por Michal Michalesko e Berta Gersten, adapta a peça clássica de Jacob Gordin baseada na lenda de Fausto.",
+  },
+  {
+    id: "amerikaner-shadkhn",
+    title: "Amerikaner Shadkhn",
+    year: "1940",
+    image: "img/AmericanMatchmaker.png",
+    driveId: "1dmsKHcZ_iP75LvKfJnpd9oAIPsnXJHNJ",
+    description:
+      "Comédia romântica musical em Yiddish de 1940, dirigida por Edgar G. Ulmer e estrelada por Leo Fuchs, conhecido como \"o Fred Astaire iídiche\".",
+  },
+  {
+    id: "yidl-mitn-fidl",
+    title: "Yidl Mitn Fidl",
+    year: "1936",
+    image: "img/yidl.png",
+    driveId: "1GtLijbJja3IFPNAGRQnNjqrk0fwAX71c",
+    description:
+      "Famoso musical de comédia em Yiddish. Dirigido por Joseph Green e Jan Nowina-Przybylski, e estrelado por Molly Picon, foi gravado externamente na Polônia e se tornou um dos maiores sucessos da história do cinema Yiddish.",
+  },
+  {
+    id: "shkheynim",
+    title: "Shkheynim",
+    year: "1937",
+    image: "img/Shkheynim.png",
+    driveId: "1-yCBt9Q7tceMp_-4ZjLDJ5yWKE6ssMgF",
+    description:
+      "Versão dublada em Yiddish do famoso filme polonês de comédia musical de 1937.",
+  },
+  {
+    id: "fishke-der-krumer",
+    title: "Fishke der Krumer",
+    year: "1939",
+    image: "img/Fishke.png",
+    driveId: "1skAknQ8blXmmOvvSq6OGLFlDeLDTHmjB",
+    description:
+      "Clássico filme em Yiddish de 1939, dirigido por Edgar G. Ulmer. Baseado em histórias de Mendele Mocher Sforim, acompanha dois jovens amantes pobres e com deficiência em um shtetl russo do século XIX, que sonham em escapar da pobreza.",
+  },
 ];
 
 // ---- Pronomes ----
