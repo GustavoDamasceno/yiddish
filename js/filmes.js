@@ -44,11 +44,35 @@ function createFilmCardElement(film) {
   return article;
 }
 
-function renderFilmCards() {
+function renderFilmCards(filmsList) {
   const grid = document.getElementById("films-grid");
+  const emptyMessage = document.getElementById("films-empty");
   grid.innerHTML = "";
-  films.forEach((film) => {
+
+  if (filmsList.length === 0) {
+    emptyMessage.textContent = siteContent.filmsPage.noResults;
+    emptyMessage.hidden = false;
+    return;
+  }
+
+  emptyMessage.hidden = true;
+  filmsList.forEach((film) => {
     grid.appendChild(createFilmCardElement(film));
+  });
+}
+
+function filterFilmsByName(query) {
+  const term = query.trim().toLowerCase();
+  if (!term) return films;
+
+  return films.filter((film) => film.title.toLowerCase().includes(term));
+}
+
+function initFilmsSearch() {
+  const searchInput = document.getElementById("films-search");
+  searchInput.placeholder = siteContent.filmsPage.searchPlaceholder;
+  searchInput.addEventListener("input", () => {
+    renderFilmCards(filterFilmsByName(searchInput.value));
   });
 }
 
@@ -139,7 +163,8 @@ function initFilmsPage() {
   document.getElementById("films-title").textContent = content.title;
   document.getElementById("films-subtitle").textContent = content.subtitle;
 
-  renderFilmCards();
+  initFilmsSearch();
+  renderFilmCards(films);
   initFilmModal();
 }
 

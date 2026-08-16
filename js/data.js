@@ -98,6 +98,8 @@ const siteContent = {
     title: "Filmes",
     subtitle: "Cinema em Yiddish ou sobre o mundo ashkenazim que estou reunindo neste caderno.",
     backLabel: "← Voltar à cultura",
+    searchPlaceholder: "Buscar por nome…",
+    noResults: "Nenhum filme encontrado com esse nome.",
     watchBtn: "Assistir",
     closeLabel: "Fechar",
     fileProtocolHint:
@@ -645,6 +647,69 @@ const films = [
     youtubeId: "Ni_0ehzcZ64",
     description:
       "Em meados do século 19, uma comunidade judaica da cidade de Praga é ameaçada por um decreto do imperador. Na tentativa de salvar seu povo da desgraça, o Rabino Loew dá vida a um Golem.",
+  },
+  {
+    id: "a-brivele-der-mamen",
+    title: "A Brivele der Mamen",
+    year: "1938",
+    image: "img/a_brivele_der_namen.png",
+    driveId: "1CKG9JgPHi-DmcXqdgKgc5yO16uDIyo1G",
+    description:
+      "Aclamado drama musical em Yiddish de 1938, dirigido por Joseph Green e Leon Trystan.",
+  },
+  {
+    id: "der-vilner-shtot-khazn",
+    title: "Der Vilner Shtot Khazn",
+    year: "1940",
+    image: "img/Der_Vilner_Shtot_Khazn.png",
+    driveId: "1ImBXW8KDK5dn1Rul1qookIpLnUi4MOxY",
+    description:
+      "Clássico filme musical dramático em Yiddish de 1940, dirigido por Max Nosseck. Estrelado pelo virtuoso cantor de sinagoga Moishe Oysher, que interpreta um talentoso cantor litúrgico que abandona seus deveres religiosos em busca de fama secular na Ópera de Varsóvia.",
+  },
+  {
+    id: "der-yidisher-nign",
+    title: "Der Yidisher Nign",
+    year: "1940",
+    image: "img/Der_Yidisher_Nign.png",
+    driveId: "1Me4bZn460-c69qjGh4pQ2VmKN1sFShGk",
+    description:
+      "Filme musical em Yiddish lançado em 1940, dirigido por Joseph Seiden nos Estados Unidos. Retrata o cotidiano, o romance e o humor da comunidade judaica da época.",
+  },
+  {
+    id: "freylekhe-kabtsonim",
+    title: "Freylekhe kabtsonim",
+    year: "1937",
+    image: "img/Freylekhe_kabtsonim.png",
+    driveId: "19xSJxy5TQBF2IK6jH6f6KMAB4PQv6dtU",
+    description:
+      "Comédia em preto e branco em Yiddish de 1937, filmada na Polônia entre guerras pela empresa cinematográfica Kinor.",
+  },
+  {
+    id: "motl-der-operator",
+    title: "Motl der Operator",
+    year: "1939",
+    image: "img/MOTL_THE_OPERATOR.png",
+    driveId: "1dpmaQz5li_rAGzivnQdX98eZLNFg6oy7",
+    description:
+      "Clássico melodrama em Yiddish lançado em 1939 nos Estados Unidos. Dirigido por Joseph Seiden e baseado em uma popular peça do teatro Yiddish da Second Avenue.",
+  },
+  {
+    id: "mamele",
+    title: "Mamele",
+    year: "1938",
+    image: "img/Mamele.png",
+    driveId: "1ymIUsrJgCrZ4s6ogqsFFxicREcBeh5av",
+    description:
+      "Clássica comédia dramática musical em Yiddish, dirigida por Joseph Green e Konrad Tom.",
+  },
+  {
+    id: "hester-street",
+    title: "Hester Street",
+    year: "1975",
+    image: "img/Hester.png",
+    driveId: "1K5ZCCo5y7vsISfse66yLhbFfHo5Ef94Q",
+    description:
+      "Filme norte-americano de 1975, do gênero drama, dirigido por Joan Micklin Silver e estrelado por Steven Keats e Carol Kane.",
   },
 ];
 
