@@ -3,6 +3,10 @@
    Dados em data.js → films
    ============================================================ */
 
+function filmHasPlayer(film) {
+  return Boolean(film.youtubeId || film.driveId);
+}
+
 function createFilmCardElement(film) {
   const article = document.createElement("article");
   article.className = "poet-card";
@@ -26,7 +30,7 @@ function createFilmCardElement(film) {
     <p class="poet-card__desc">${film.description}</p>
   `;
 
-  if (film.youtubeId) {
+  if (filmHasPlayer(film)) {
     const watchBtn = document.createElement("button");
     watchBtn.type = "button";
     watchBtn.className = "btn btn-primary btn-small poet-card__btn";
@@ -48,6 +52,15 @@ function renderFilmCards() {
   });
 }
 
+function getFilmEmbedSrc(film) {
+  if (film.driveId) {
+    return `https://drive.google.com/file/d/${film.driveId}/preview`;
+  }
+
+  const origin = encodeURIComponent(window.location.origin);
+  return `https://www.youtube.com/embed/${film.youtubeId}?rel=0&modestbranding=1&origin=${origin}`;
+}
+
 function buildFilmPlayerHTML(film) {
   const isFileProtocol = window.location.protocol === "file:";
 
@@ -60,8 +73,7 @@ function buildFilmPlayerHTML(film) {
     `;
   }
 
-  const origin = encodeURIComponent(window.location.origin);
-  const embedSrc = `https://www.youtube.com/embed/${film.youtubeId}?rel=0&modestbranding=1&origin=${origin}`;
+  const embedSrc = getFilmEmbedSrc(film);
 
   return `
     <h2 class="film-modal__title" id="film-modal-title">${film.title}</h2>
